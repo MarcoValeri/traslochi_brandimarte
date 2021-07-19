@@ -1,0 +1,10 @@
+/*
+* Set up general style rules
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// Import components files
+@import "components/navbar";
