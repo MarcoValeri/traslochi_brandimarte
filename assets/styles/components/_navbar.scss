@@ -1,232 +1,132 @@
 .header-navbar {
+    font-family: 'Open Sans Condensed', sans-serif;
     padding: 1rem;
+    background-color: #000;
 
-    .header-navbar-menu-toggle {
-        display: block;
-        position: relative;
-        top: 0rem;
+    input,
+    span {
+        display: none;
+    }
 
-        z-index: 1;
+    li {
+        display: inline;
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
 
-        -webkit-user-select: none;
-        user-select: none;
+    a {
+        color: #fff;
+        text-decoration: none;
 
-        a {
-            text-decoration: none;
-            color: #000;
-
-            transition: color 0.3s ease;
-
-            &:hover {
-                color: tomato;
-            }
-        }
-
-        input {
-            display: block;
-            width: 40px;
-            height: 32px;
-            position: absolute;
-            top: -7px;
-            left: -5px;
-
-            opacity: 0;
-            z-index: 2;
-
-            -webkit-touch-callout: none;
-        }
-
-        span {
-            display: block;
-            width: 33px;
-            height: 4px;
-            margin-bottom: 5px;
-            position: relative;
-
-            background: #000;
-            border-radius: 3px;
-
-            z-index: 1;
-
-            transform-origin: 4px 0px;
-
-            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-                        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-                        opacity 0.55s ease;
-
-            &:first-child {
-                transform-origin: 0% 0%;
-            }
-
-            &:nth-last-child(2) {
-                transform-origin: 0% 100%;
-            }
-        }
-
-        input:checked ~ span:nth-last-child(3) {
-            opacity: 0;
-            transform: rotate(0deg) scale(0.2, 0.2);
-        }
-
-        input:checked ~ span:nth-last-child(2) {
-            transform: rotate(-45deg) translate(0, 1px);
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: #ff0000;
         }
     }
 
-    .header-navbar-menu {
-        position: absolute;
-        width: 90%;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        padding-top: 125px;
-
-        background: #FFFF9C;
-        list-style-type: none;
-        -webkit-font-smoothing: antialiased;
-
-        transform-origin: 0% 0%;
-        transform: translate(-100%, 0);
-
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-
-        li {
-            padding: 10px 0;
-            font-size: 22px;
-        }
-    }
-
-    input:checked ~ ul {
-        transform: none;
-    }
 }
 
 /*
-* Media Queries max with 299px
-* for small smartphone like JioPhone 2
+* Media Queries
+* max-width: 767px
 */
-@media (max-width: 299px) {
+@media (max-width: 767px) {
 
-    nav {
+    .header-navbar {
 
-        .header-navbar-menu-toggle {
+            .header-navbar-menu-toggle {
+                display: block;
+                position: relative;
+                top: 0rem;
 
-            .header-navbar-menu {
-                width: 70%;
+                z-index: 1;
 
-                li {
-                    font-size: 1rem;
-                    padding: .3rem 0;
+                -webkit-user-select: none;
+                user-select: none;
+
+                a {
+                    color: #fff;
+
+                    transition: color 0.3s ease;
+                }
+
+                input {
+                    display: block;
+                    width: 40px;
+                    height: 32px;
+                    position: absolute;
+                    top: -7px;
+                    left: -5px;
+
+                    opacity: 0;
+                    z-index: 2;
+
+                    -webkit-touch-callout: none;
+                }
+
+                span {
+                    display: block;
+                    width: 33px;
+                    height: 4px;
+                    margin-bottom: 5px;
+                    position: relative;
+
+                    background: #fff;
+                    border-radius: 3px;
+
+                    z-index: 1;
+
+                    transform-origin: 4px 0px;
+
+                    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                                background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                                opacity 0.55s ease;
+
+                    &:first-child {
+                        transform-origin: 0% 0%;
+                    }
+
+                    &:nth-last-child(2) {
+                        transform-origin: 0% 100%;
+                    }
+                }
+
+                input:checked ~ span:nth-last-child(3) {
+                    opacity: 0;
+                    transform: rotate(0deg) scale(0.2, 0.2);
+                }
+        
+                input:checked ~ span:nth-last-child(2) {
+                    transform: rotate(-45deg) translate(0, 1px);
                 }
             }
-        }
-    }
-
-}
-
-/*
-* Media Queries min width 300px max with 320px
-* for small smartphone like iPhone 4
-*/
-@media (min-width: 300px) and (max-width: 320px) {
-
-    nav {
-
-        .header-navbar-menu-toggle {
 
             .header-navbar-menu {
-                width: 80%;
-            }
-        }
-    }
-
-}
-
-/*
-* Media Queries min width 450px max with 767px
-* for landscape
-*/
-@media (min-width: 450px) and (max-width: 767px) {
-
-    nav {
-
-        .header-navbar-menu-toggle {
-
-            .header-navbar-menu {
+                position: absolute;
                 width: 90%;
+                margin: -100px 0 0 -50px;
+                padding: 50px;
+                padding-top: 125px;
+
+                background: #111;
+                list-style-type: none;
+                -webkit-font-smoothing: antialiased;
+
+                transform-origin: 0% 0%;
+                transform: translate(-100%, 0);
+
+                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 
                 li {
-                    font-size: 1rem;
-                    padding: .3rem 0;
+                    padding: 10px 0;
+                    font-size: 22px;
+                    display: block;
                 }
             }
+
+            input:checked ~ ul {
+                transform: none;
+            }
         }
+
     }
-
-}
-
-/*
-* Media Queries min width 768px max with 1024px
-* for tablets
-*/
-@media (min-width: 768px) and (max-width: 1024px) {
-
-    nav {
-
-        .header-navbar-menu-toggle {
-            
-            input,
-            span {
-                display: none;
-            }
-        }
-
-        .header-navbar-menu {
-            width: 95%;
-            display: inline;
-            transform: translate(0, 0);
-            background: none;
-            text-align: center;
-
-            li {
-                display: inline-block;
-                padding: 1rem;
-                font-size: 2rem;
-            }
-        }
-    }
-
-}
-
-
-/*
-* Media Queries min width 1025px
-* for laptops and desktop
-*/
-@media (min-width: 1025px){
-
-    nav {
-
-        .header-navbar-menu-toggle {
-            
-            input,
-            span {
-                display: none;
-            }
-        }
-
-        .header-navbar-menu {
-            width: 95%;
-            display: inline;
-            transform: translate(0, 0);
-            background: none;
-            text-align: center;
-
-            li {
-                display: inline-block;
-                padding: 1rem;
-                font-size: 2rem;
-            }
-        }
-    }
-
-}
