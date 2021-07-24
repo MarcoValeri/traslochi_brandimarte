@@ -41,7 +41,7 @@
                             <li><a href="#">Logo</a></li>
                         </section>
                         <section class="header-navbar-menu-link">
-                            <li class={{ app.request.pathinfo == "/" ? "header-navbar-menu-link-mark" : "" }}><a href="#">Home</a></li>
+                            <li class={{ app.request.pathinfo == "/" ? "header-navbar-menu-link-mark" : "" }}><a href="{{ path('app_homepage') }}">Home</a></li>
                             <li class={{ app.request.pathinfo == "/chi-siamo" ? "header-navbar-menu-link-mark" : "" }}><a href="#">Chi siamo</a></li>
                             <li><a href="#">Servizi</a></li>
                             <li><a href="#">Preventivi</a></li>
@@ -59,6 +59,13 @@
                     </ul>
                 </section>
             </nav>
+
+            <section class="header-section">
+                <section class="header-section-title">
+                    <h1>Traslochi Brandimarte</li>
+                    <h2>Traslochi su Roma, nazionali ed internazionali</h2>
+                </section>
+            </section>
 
         </header>
         {% block body %}{% endblock %}
