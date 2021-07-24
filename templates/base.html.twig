@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
@@ -23,11 +24,25 @@
                     <span></span>
                     <span></span>
                     <ul class="header-navbar-menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Chi siamo</a></li>
-                        <li><a href="#">Servizi</a></li>
-                        <li><a href="#">Preventivo gratuito</a></li>
-                        <li><a href="#">Contatti</a></li>
+                        <section class="header-navbar-menu-logo">
+                            <li><a href="#">Logo</a></li>
+                        </section>
+                        <section class="header-navbar-menu-link">
+                            <li class={{ app.request.pathinfo == "/" ? "header-navbar-menu-link-mark" : "" }}><a href="#">Home</a></li>
+                            <li class={{ app.request.pathinfo == "/chi-siamo" ? "header-navbar-menu-link-mark" : "" }}><a href="#">Chi siamo</a></li>
+                            <li><a href="#">Servizi</a></li>
+                            <li><a href="#">Preventivi</a></li>
+                            <li><a href="#">Contatti</a></li>
+                        </section>
+                        <section class="header-navbar-menu-quote">
+                            <a href="#">
+                                <section class="btn-animated-wrap">
+                                    <section class="btn-animated">
+                                        <li>Preventivo online gratuito</li>
+                                    </section>
+                                </section>
+                            </a>
+                        </section>
                     </ul>
                 </section>
             </nav>

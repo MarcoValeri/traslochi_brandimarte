@@ -1,0 +1,36 @@
+/*
+* Create mixin that decorate 
+* the btn of the website
+*/
+@mixin btn-animated-flow {
+    
+    .btn-animated-wrap {
+        width: auto;
+        position: relative;
+        background: linear-gradient(240deg, #008000 0%, #fff 49%, #008000 80%, #008000 100%);
+        padding: 3px;
+        border-radius: 5px;
+    
+        animation: flow 20s linear infinite;
+
+        &:hover {
+            //background: linear-gradient(240deg, $blue_link 0%, #87bfff 49%, $blue_link 80%, $blue_link 100%);
+            background: linear-gradient(240deg, #008000 0%, #ffff00 49%, #008000 80%, #008000 100%);
+        }
+    }
+    
+    .btn-animated {
+        background: $grey_background;
+        color: $blue_font;
+        padding: .5rem;
+    }
+    
+    @keyframes flow {
+    
+        to {
+            background-position: 100rem;
+        }
+    
+    }
+
+}

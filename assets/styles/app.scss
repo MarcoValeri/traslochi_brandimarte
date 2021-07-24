@@ -6,5 +6,9 @@
     padding: 0;
 }
 
+// Import abstracts files
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
 // Import components files
 @import "components/navbar";
