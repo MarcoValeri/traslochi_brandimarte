@@ -1,0 +1,58 @@
+// Navbar contact details
+.header-navbar-contact {
+    font-size: 1.2rem;
+
+    ul {
+
+        li {
+            display: inline-block;
+            list-style: none;
+            padding: 1rem;
+
+            .fa-phone {
+                font-size: 1.5rem;
+                color: #000080;
+            }
+
+            .fa-whatsapp {
+                font-size: 1.5rem;
+                color: #25D366;
+            }
+
+            .fa-envelope {
+                font-size: 1.5rem;
+                color: #000;
+            }
+
+            .header-navbar-contact-phone-number {
+                color: $blue_link;
+                font-weight: 900;
+                text-decoration: none;
+            }
+
+        }
+
+        .header-navbar-contact-title {
+            color: $blue_font;
+        }
+
+    }
+}
+
+/*
+* Media queries for 
+* screens max-width: 767px
+*/
+@media (max-width: 767px) {
+
+    .header-navbar-contact {
+        text-align: center;
+        
+        .header-navbar-contact-title,
+        .header-navbar-contact-phone {
+            display: none;
+        }
+
+    }
+
+}

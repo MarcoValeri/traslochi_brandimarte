@@ -12,10 +12,23 @@
 
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
+            <script src="https://kit.fontawesome.com/25e71e3313.js" crossorigin="anonymous" defer></script>
         {% endblock %}
     </head>
     <body>
         <header class="header">
+
+            {# Navbar contact datails #}
+            <nav class="header-navbar-contact">
+                <ul>
+                    <li class="header-navbar-contact-title">Preventivi e sopralluoghi gratuiti:</li>
+                    <li class="header-navbar-contact-phone"><a class="header-navbar-contact-phone-number" href="tel:+3906872237" target="_blank" alt="Telephone number">+39.06.87.22.37</a></li>
+                    <li><a href="tel:+390687132237" alt="Phone icon"><i class="fas fa-phone"></i></a></li>
+                    <li><a href="https://wa.me/+447481486394" target="_blank" alt="Whatsapp icon"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="mailto:info@marcovaleri.net" target="_blank" alt="Email icon"><i class="fas fa-envelope"></i></a></li>
+                </li>
+            </nav>
+
             {# Navbar #}
             <nav class="header-navbar">
                 <section class="header-navbar-menu-toggle">
@@ -46,6 +59,7 @@
                     </ul>
                 </section>
             </nav>
+
         </header>
         {% block body %}{% endblock %}
     </body>
