@@ -8,6 +8,23 @@ Traslochi Brandimarte
 {#  Body of the page  #}
 {% block body %}
 
+<main class="home-main">
+    <section class="home-main-title">
+        <h2>Chi siamo</h2>
+        <p>
+            Traslochi Brandimarte è una ditta di traslochi italiana certificata che opera nella città di Roma,
+            sul territorio nazionale e internazionale.
+            Lavorando da anni nel settore sappiamo quanto un traloco sia un'esperienza stressante e faticosa, così la nostra
+            missione è rendere il tuo prossimo trasloco facile, sicuro e piacevole.
+        </p>
+    </section>
 
+    <section class="home-main-video">
+        <video controls>
+            <source src="{{ asset('/videos/traslochi-brandimarte-video.mp4') }}" type="video/mp4">
+            Il tou browser non support HTML video
+        </video>
+    </section>
+</main>
 
 {% endblock %}

@@ -1,0 +1,34 @@
+.home-main {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    "home-main-title home-main-title home-main-title"
+    "home-main-video home-main-video home-main-video";
+
+    .home-main-title {
+        grid-area: home-main-title;
+        border: 1px solid #ff0000;
+
+        h2 {
+            text-align: center;
+            font-size: 4rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $blue_font;
+            letter-spacing: 2px;
+        }
+    }
+
+    .home-main-video {
+        grid-area: home-main-video;
+        margin: auto;
+        border: 1px solid #ff0000;
+
+        video {
+            width: 100%;
+        }
+
+    }
+
+}
