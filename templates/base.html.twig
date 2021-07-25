@@ -23,10 +23,10 @@
             <nav class="header-navbar-contact">
                 <ul>
                     <li class="header-navbar-contact-title">Preventivi e sopralluoghi gratuiti:</li>
-                    <li class="header-navbar-contact-phone"><a class="header-navbar-contact-phone-number" href="tel:+3906872237" target="_blank" alt="Telephone number">+39.06.87.22.37</a></li>
-                    <li><a href="tel:+390687132237" alt="Phone icon"><i class="fas fa-phone"></i></a></li>
-                    <li><a href="https://wa.me/+447481486394" target="_blank" alt="Whatsapp icon"><i class="fab fa-whatsapp"></i></a></li>
-                    <li><a href="mailto:info@marcovaleri.net" target="_blank" alt="Email icon"><i class="fas fa-envelope"></i></a></li>
+                    <li class="header-navbar-contact-phone"><a class="header-navbar-contact-phone-number" href="tel:+393381106682" target="_blank" alt="Telephone number">+39.338.11.06.682</a></li>
+                    <li><a href="tel:+393381106682" alt="Phone icon"><i class="fas fa-phone"></i></a></li>
+                    <li><a href="https://wa.me/+393381106682" target="_blank" alt="Whatsapp icon"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="mailto:info@brandimarte" target="_blank" alt="Email icon"><i class="fas fa-envelope"></i></a></li>
                 </ul>
             </nav>
 
@@ -69,6 +69,50 @@
             </section>
 
         </header>
+
+        {# Body #}
         {% block body %}{% endblock %}
+
+        {# Footer #}
+        <footer class="footer">
+            <section class="footer-information">
+                <ul>
+                    <li><i class="far fa-building"></i> Traslochi Brandimarte</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Via Ferdinando Maria Poggioli 58 - 00139 Roma</li>
+                    <li><a href="tel:+393381106682" alt="Phone icon"><i class="fas fa-phone"></i> +39.338.11.06.682</a></li>
+                    <li><a href="https://wa.me/+393381106682" target="_blank" alt="Whatsapp icon"><i class="fab fa-whatsapp"></i> +39.338.11.06.682</a></li>
+                    <li><a href="tel:+390687132237" alt="Phone icon"><i class="fas fa-tty"></i> +39.06.87.13.22.37</a></li>
+                    <li><a href="mailto:info@brandimarte" target="_blank" alt="Email icon"><i class="fas fa-envelope"></i> info@brandimarte</a></li>
+                    <li><a href="mailto:brandimarte.andrea@pec.it" target="_blank" alt="Email icon"><i class="fas fa-at"></i> Pec: brandimarte.andrea@pec.it</a></li>
+                    <li><i class="fas fa-info-circle"></i> PI 15929701009</li>
+                </ul>
+            </section>
+            <section class="footer-timetable">
+                {% set today = "now"|date("l") %}
+                <ul>
+                    <li><h2>Siamo aperti</h2></li>
+                    <li class={{ today == "Monday" ? "footer-timetable-mark" : "" }}>Lunedì: 8 - 20</li>
+                    <li class={{ today == "Tuesday" ? "footer-timetable-mark" : "" }}>Martedì: 8 - 20</li>
+                    <li class={{ today == "Wednesday" ? "footer-timetable-mark" : "" }}>Mercoledì: 8 - 20</li>
+                    <li class={{ today == "Thursday" ? "footer-timetable-mark" : "" }}>Giovedì: 8 - 20</li>
+                    <li class={{ today == "Friday" ? "footer-timetable-mark" : "" }}>Venerdì: 8 - 20</li>
+                    <li class={{ today == "Saturday" ? "footer-timetable-mark" : "" }}>Sabato: 8 - 20</li>
+                    <li class={{ today == "Sunday" ? "footer-timetable-mark" : "" }}>Domenica: chiuso</li>
+                    <li class="footer-timetable-mark">Su appuntamento: 24 ore su 24 - 7 giorni su 7</li>
+                </ul>
+            </section>
+            <section class="footer-social">
+                <ul>
+                    <li><h2>Seguici su</h2></li>
+                    <br>
+                    <li><i class="fab fa-facebook"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                </ul>
+            </section>
+            <section class="footer-powered">
+                <p>Made with <span class="footer-powered-heart">&hearts;</span> in London by <a href="https://devmarco.com/" target="_blank">Marco Valeri</a> - <span class="footer-powered-copy">&copy;</span> {{ "now"|date("Y") }} - All rights reserved</p>
+            </section>
+        </footer>
     </body>
 </html>

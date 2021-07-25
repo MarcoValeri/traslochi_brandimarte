@@ -21,6 +21,10 @@
         
         a {
             font-size: 2rem;
+            
+            &:hover {
+                text-decoration: none;
+            }
         }
 
     }

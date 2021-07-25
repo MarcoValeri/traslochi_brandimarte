@@ -1,0 +1,236 @@
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "footer-information footer-timetable footer-social"
+    "footer-powered footer-powered footer-powered";
+
+    height: auto;
+    min-height: 30vh;
+    background-color: $grey_background;
+    color: $blue_font;
+
+    ul {
+
+        li {
+            list-style: none;
+        }
+
+    }
+
+    .footer-information {
+        grid-area: footer-information;
+        padding: 2rem;
+        border: 1px solid #fff;
+
+        ul {
+            li {
+                padding: .5rem;
+                font-size: 1.2rem;
+
+                .fa-building {
+                    color: #094ab2;
+                }
+
+                .fa-map-marker-alt {
+                    color: #d24726;
+                }
+
+                .fa-phone {
+                    color: #2b579a;
+                }
+
+                .fa-whatsapp {
+                    color: #25D366;
+                }
+
+                .fa-tty {
+                    color: #80397b;
+                }
+
+                .fa-envelope {
+                    color: #000;
+                }
+
+                .fa-at {
+                    color: darken(#ffff00, 10%);
+                }
+
+                .fa-info-circle {
+                    color: #19BBFE;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $blue_font;
+                }
+
+            }
+        }
+
+    }
+
+    .footer-timetable {
+        grid-area: footer-timetable;
+        padding: 2rem;
+        border: 1px solid #fff;
+
+        ul {
+
+            li {
+                font-size: 1.2rem;
+                padding: .5rem;
+            }
+
+            .footer-timetable-mark {
+                font-weight: 900;
+            }
+
+        }
+    }
+
+    .footer-social {
+        grid-area: footer-social;
+        padding: 2rem;
+        text-align: center;
+        border: 1px solid #fff;
+
+        ul {
+            
+            li {
+                display: inline;
+                font-size: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            i {
+                font-size: 2rem;
+            }
+
+            .fa-facebook {
+                color: #1877F2;
+            }
+
+            .fa-instagram {
+                color: #E4405F;
+            }
+
+            .fa-linkedin-in {
+                color: #0A66C2;
+            }
+
+        }
+
+    }
+
+    .footer-powered {
+        grid-area: footer-powered;
+        padding: 2rem;
+        text-align: center;
+        border-top: 1px solid #fff;
+
+        .footer-powered-heart {
+            font-size: 2rem;
+            color: #ff0000;
+        }
+
+        a {
+            text-decoration: none;
+            color: #123456;
+            font-weight: 900;
+        }
+
+        .footer-powered-copy {
+            font-weight: 900;
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 1024px
+*/
+.footer {
+
+    .footer-social {
+        padding: 1rem;
+
+        ul {
+            
+            li {
+                padding: 1rem;
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 767px
+*/
+@media (max-width: 767px) {
+
+    .footer {
+        grid-template-areas:
+        "footer-information footer-information footer-information"
+        "footer-timetable footer-timetable footer-timetable"
+        "footer-social footer-social footer-social"
+        "footer-powered footer-powered footer-powered";
+
+        .footer-information {
+            text-align: center;
+            border: none;
+        }
+
+        .footer-timetable {
+            text-align: center;
+            border: none;
+            border-top: 1px solid #fff;
+        }
+
+        .footer-social {
+            border: none;
+            border-top: 1px solid #fff;
+
+            ul {
+
+                li {
+                    padding: 2rem;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 480px
+*/
+@media (max-width: 480px) {
+
+    .footer {
+        
+        .footer-social {
+
+            ul {
+
+                li {
+                    padding: 1.5rem;
+                }
+
+            }
+
+        }
+
+    }
+
+}
