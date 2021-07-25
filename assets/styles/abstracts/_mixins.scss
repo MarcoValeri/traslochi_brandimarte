@@ -34,3 +34,50 @@
     }
 
 }
+
+
+/*
+* Create a mixim that
+* create the signature
+* of the owner
+*/
+@mixin signature {
+
+    .signature-font {
+
+        font-family: 'Great Vibes', cursive;
+
+    }
+
+}
+
+/*
+* Create a mixim that
+* create the right font
+* for the brand
+*/
+@mixin brand {
+
+    .brand-font {
+
+        font-family: 'Bangers', cursive;
+        letter-spacing: 2px;
+
+    }
+
+}
+
+/*
+* Create a mixim that
+* highlight a specific
+* content
+*/
+@mixin highlight {
+
+    .highlight-font {
+
+        font-family: 'Goblin One', cursive;
+
+    }
+
+}

@@ -9,21 +9,62 @@ Traslochi Brandimarte
 {% block body %}
 
 <main class="home-main">
-    <section class="home-main-title">
-        <h2>Chi siamo</h2>
-        <p>
-            Traslochi Brandimarte è una ditta di traslochi italiana certificata che opera nella città di Roma,
-            sul territorio nazionale e internazionale.
-            Lavorando da anni nel settore sappiamo quanto un traloco sia un'esperienza stressante e faticosa, così la nostra
-            missione è rendere il tuo prossimo trasloco facile, sicuro e piacevole.
-        </p>
+    <section class="home-main-container">
+        <section class="home-main-container-title">
+            <h2>Traslochi a Roma, nazionali ed internazionali</h2>
+        </section>
+        <section class="home-main-container-content">
+            <p>
+                L'impresa <span class="brand-font">Brandimarte Traslochi</span> opera nel settore <span class="highlight-font">da oltre 10 anni
+                </span> ed offre ai propri clienti vari tipologie di trasporti
+            </p>
+            <br>
+            <ul>
+                <li><i class="fas fa-truck-moving"></i> Traslochi nazionali <i class="fas fa-truck-moving"></i></li>
+                <li><i class="fas fa-plane-departure"></i> Traslochi internazionali <i class="fas fa-plane-arrival"></i></li>
+                <li><i class="fas fa-dolly"></i> Traslochi professionali <i class="fas fa-dolly"></i></li>
+                <li><i class="fas fa-box-open"></i> Traslochi di appartamenti <i class="fas fa-box-open"></i></li>
+                <li><i class="fas fa-people-carry"></i> Trasporto di pianoforti <i class="fas fa-people-carry"></i></li>
+                <li><i class="fas fa-building"></i> Traslochi di uffici <i class="fas fa-building"></i></li>
+            </ul>
+            <br>
+            <p>
+                Disponiamo inoltre di <span class="highlight-font">depositi sorvegliati 24 ore su 24</span><br>
+                <br>
+                Il <span class="highlight-font">nostro personale è a vostra disposizione</span> per soddisfare 
+                <span class="home-main-container-content-underline">qualunque esigenza</span><br>
+                <br>
+                <span class="highlight-font">Affidati alla nostra professionalità ed esperienza.</span><br>
+                <br>
+                <section class="header-navbar-menu-quote">
+                    <a href="#">
+                        <section class="btn-animated-wrap">
+                            <section class="btn-animated">
+                                <p><span class="highlight-font">Chiamaci per un preventivo gratuito</span></p>
+                            </section>
+                        </section>
+                    </a>
+                </section>
+                <br>
+                Verremo a casa vostra per un <span class="highlight-font">sopralluogo gratuito e senza impegno</span> in occasione del quale i nostri
+                tecnici vi offriranno la loro consulenza<br>
+                <br>
+                <span class="home-main-container-content-signature signature-font">Andrea Brandimarte</span>
+            </p>
+        </section>
     </section>
 
     <section class="home-main-video">
-        <video controls>
-            <source src="{{ asset('/videos/traslochi-brandimarte-video.mp4') }}" type="video/mp4">
-            Il tou browser non support HTML video
-        </video>
+        <section class="home-main-video-title">
+            <h2>Chi siamo</h2>
+        </section>
+        <section id="video-player" class="home-main-video-container">
+            <video id="video" poster="https://127.0.0.1:8000/images/roma-piazza-del-popolo.jpg" controls>
+                <source src="{{ asset('/videos/traslochi-brandimarte-video.mp4') }}" type="video/mp4">
+                Il tou browser non support HTML video
+            </video>
+            <button type="button" id="play_button">Play</button>
+        </section>
     </section>
 </main>
 

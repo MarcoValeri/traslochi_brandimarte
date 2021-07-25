@@ -1,32 +1,100 @@
 .home-main {
     display: grid;
     padding: 2rem;
+    font-family: 'Noto Serif TC', serif;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas: 
     "home-main-title home-main-title home-main-title"
     "home-main-video home-main-video home-main-video";
 
-    .home-main-title {
+    .home-main-container {
         grid-area: home-main-title;
+        background-color: $grey_background;
         border: 1px solid #ff0000;
 
-        h2 {
-            text-align: center;
-            font-size: 4rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: $blue_font;
-            letter-spacing: 2px;
+        .home-main-container-title {
+            width: 80%;
+            margin: auto;
+            border: 1px solid #ff0000;
+
+            h2 {
+                text-align: center;
+                font-size: 4rem;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: $blue_font;
+                letter-spacing: 2px;
+            }
+
         }
+
+        .home-main-container-content {
+            width: 60%;
+            margin: auto;
+            color: $blue_font;
+            border: 1px solid #ff0000;
+
+            @include signature;
+            @include brand;
+            @include highlight;
+            @include btn-animated-flow;
+
+            padding: 2rem;
+            line-height: 1.6;
+            font-size: 1.5rem;
+
+            ul {
+
+                li {
+                    list-style: none;
+                }
+
+            }
+
+            .home-main-container-content-underline {
+                text-decoration-line: underline;
+                text-decoration-style: double;
+            }
+
+            .home-main-container-content-signature {
+                font-size: 5rem;
+            }
+
+        }
+
+
     }
 
     .home-main-video {
         grid-area: home-main-video;
-        margin: auto;
+        width: 100%;
+        margin: 2rem auto;
         border: 1px solid #ff0000;
 
-        video {
-            width: 100%;
+        .home-main-video-title {
+            width: 80%;
+            text-align: center;
+            margin: 2rem auto;
+
+            h2 {
+                text-align: center;
+                font-size: 4rem;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: $blue_font;
+                letter-spacing: 2px;
+            }
+
+        }
+
+        .home-main-video-container {
+            width: 60%;
+            margin: 2rem auto;
+
+            video {
+                width: 100%;
+            }
+
         }
 
     }

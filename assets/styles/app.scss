@@ -10,6 +10,9 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
+// Import base files
+@import "base/font";
+
 // Import components files
 @import "components/navbar_contact_details";
 @import "components/navbar";
