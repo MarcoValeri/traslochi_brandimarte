@@ -16,6 +16,15 @@
         display: inline;
     }
 
+    .header-navbar-menu-logo {
+        @include signature;
+        
+        a {
+            font-size: 2rem;
+        }
+
+    }
+
     .header-navbar-menu-link {
         position: absolute;
         top: 50%;

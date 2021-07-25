@@ -10,12 +10,10 @@
     .home-main-container {
         grid-area: home-main-title;
         background-color: $grey_background;
-        border: 1px solid #ff0000;
 
         .home-main-container-title {
             width: 80%;
             margin: auto;
-            border: 1px solid #ff0000;
 
             h2 {
                 text-align: center;
@@ -32,7 +30,6 @@
             width: 60%;
             margin: auto;
             color: $blue_font;
-            border: 1px solid #ff0000;
 
             @include signature;
             @include brand;
@@ -69,7 +66,6 @@
         grid-area: home-main-video;
         width: 100%;
         margin: 2rem auto;
-        border: 1px solid #ff0000;
 
         .home-main-video-title {
             width: 80%;
@@ -88,11 +84,167 @@
         }
 
         .home-main-video-container {
+            position: relative;
             width: 60%;
             margin: 2rem auto;
+            cursor: pointer;
 
             video {
                 width: 100%;
+            }
+
+            button {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                background: transparent;
+                border: none;
+
+                .fa-play-circle {
+                    font-size: 10rem;
+                    color: #fff;
+
+                    &:hover {
+                        color: lighten(#008000, 10%);
+                        cursor: pointer;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 1024px
+*/
+@media (max-width: 1024px) {
+
+    .home-main {
+
+        .home-main-container {
+
+            .home-main-container-title {
+
+                h2 {
+                    font-size: 3rem;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 767px
+*/
+@media (max-width: 767px) {
+
+    .home-main {
+        padding: 1rem;
+
+        .home-main-container {
+
+            .home-main-container-title {
+                width: 100%;
+
+                h2 {
+                    font-size: 2rem;
+                }
+
+            }
+
+            .home-main-container-content {
+                width: 80%;
+
+                .home-main-container-content-signature {
+                    font-size: 4rem;
+                }
+
+            }
+
+        }
+
+        .home-main-video {
+
+            .home-main-video-title {
+
+                h2 {
+                    font-size: 3rem;
+                }
+
+            }
+
+            .home-main-video-container {
+                width: 80%;
+
+                button {
+
+                    .fa-play-circle {
+                        font-size: 6rem;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 480px
+*/
+@media (max-width: 480px) {
+
+    .home-main {
+        padding: .5rem;
+
+        .home-main-container {
+
+            .home-main-container-title {
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+            }
+
+            .home-main-container-content {
+                width: 90%;
+                padding: 0rem;
+                font-size: 1.2rem;
+
+                .home-main-container-content-signature {
+                    font-size: 3rem;
+                }
+
+            }
+
+        }
+
+        .home-main-video {
+
+            .home-main-video-title {
+
+                h2 {
+                    font-size: 2rem;
+                }
+
             }
 
         }
