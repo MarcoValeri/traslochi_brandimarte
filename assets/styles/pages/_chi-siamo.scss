@@ -1,17 +1,17 @@
-.home-main {
+.chisiamo-main {
     display: grid;
     padding: 2rem;
     font-family: 'Noto Serif TC', serif;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas: 
-    "home-main-title home-main-title home-main-title"
-    "home-main-video home-main-video home-main-video";
+    "chisiamo-main-video chisiamo-main-video chisiamo-main-video"
+    "chisiamo-main-title chisiamo-main-title chisiamo-main-title";
 
-    .home-main-container {
-        grid-area: home-main-title;
+    .chisiamo-main-container {
+        grid-area: chisiamo-main-title;
         background-color: $grey_background;
 
-        .home-main-container-title {
+        .chisiamo-main-container-title {
             width: 80%;
             margin: 2rem auto;
 
@@ -26,7 +26,7 @@
 
         }
 
-        .home-main-container-content {
+        .chisiamo-main-container-content {
             width: 60%;
             margin: auto;
             color: $blue_font;
@@ -48,12 +48,12 @@
 
             }
 
-            .home-main-container-content-underline {
+            .chisiamo-main-container-content-underline {
                 text-decoration-line: underline;
                 text-decoration-style: double;
             }
 
-            .home-main-container-content-signature {
+            .chisiamo-main-container-content-signature {
                 font-size: 5rem;
             }
 
@@ -62,12 +62,12 @@
 
     }
 
-    .home-main-video {
-        grid-area: home-main-video;
+    .chisiamo-main-video {
+        grid-area: chisiamo-main-video;
         width: 100%;
         margin: 2rem auto;
 
-        .home-main-video-title {
+        .chisiamo-main-video-title {
             width: 80%;
             text-align: center;
             margin: 2rem auto;
@@ -83,7 +83,7 @@
 
         }
 
-        .home-main-video-container {
+        .chisiamo-main-video-container {
             position: relative;
             width: 60%;
             margin: 2rem auto;
@@ -127,11 +127,11 @@
 */
 @media (max-width: 1024px) {
 
-    .home-main {
+    .chisiamo-main {
 
-        .home-main-container {
+        .chisiamo-main-container {
 
-            .home-main-container-title {
+            .chisiamo-main-container-title {
 
                 h2 {
                     font-size: 3rem;
@@ -151,12 +151,12 @@
 */
 @media (max-width: 767px) {
 
-    .home-main {
+    .chisiamo-main {
         padding: 1rem;
 
-        .home-main-container {
+        .chisiamo-main-container {
 
-            .home-main-container-title {
+            .chisiamo-main-container-title {
                 width: 100%;
 
                 h2 {
@@ -165,10 +165,10 @@
 
             }
 
-            .home-main-container-content {
+            .chisiamo-main-container-content {
                 width: 80%;
 
-                .home-main-container-content-signature {
+                .chisiamo-main-container-content-signature {
                     font-size: 4rem;
                 }
 
@@ -176,9 +176,9 @@
 
         }
 
-        .home-main-video {
+        .chisiamo-main-video {
 
-            .home-main-video-title {
+            .chisiamo-main-video-title {
 
                 h2 {
                     font-size: 3rem;
@@ -186,7 +186,7 @@
 
             }
 
-            .home-main-video-container {
+            .chisiamo-main-video-container {
                 width: 80%;
 
                 button {
@@ -211,12 +211,12 @@
 */
 @media (max-width: 480px) {
 
-    .home-main {
+    .chisiamo-main {
         padding: .5rem;
 
-        .home-main-container {
+        .chisiamo-main-container {
 
-            .home-main-container-title {
+            .chisiamo-main-container-title {
 
                 h2 {
                     font-size: 1.5rem;
@@ -224,12 +224,12 @@
 
             }
 
-            .home-main-container-content {
+            .chisiamo-main-container-content {
                 width: 90%;
                 padding: 0rem;
                 font-size: 1.2rem;
 
-                .home-main-container-content-signature {
+                .chisiamo-main-container-content-signature {
                     font-size: 3rem;
                 }
 
@@ -237,9 +237,9 @@
 
         }
 
-        .home-main-video {
+        .chisiamo-main-video {
 
-            .home-main-video-title {
+            .chisiamo-main-video-title {
 
                 h2 {
                     font-size: 2rem;

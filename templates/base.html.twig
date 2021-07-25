@@ -26,7 +26,7 @@
                     <li class="header-navbar-contact-phone"><a class="header-navbar-contact-phone-number" href="tel:+393381106682" target="_blank" alt="Telephone number">+39.338.11.06.682</a></li>
                     <li><a href="tel:+393381106682" alt="Phone icon"><i class="fas fa-phone"></i></a></li>
                     <li><a href="https://wa.me/+393381106682" target="_blank" alt="Whatsapp icon"><i class="fab fa-whatsapp"></i></a></li>
-                    <li><a href="mailto:info@brandimarte" target="_blank" alt="Email icon"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="mailto:info@brandimarte.com" target="_blank" alt="Email icon"><i class="fas fa-envelope"></i></a></li>
                 </ul>
             </nav>
 
@@ -39,17 +39,17 @@
                     <span></span>
                     <ul class="header-navbar-menu">
                         <section class="header-navbar-menu-logo">
-                            <li><a class="signature-font" href="#">Traslochi Brandimarte</a></li>
+                            <li><a class="signature-font" href="{{ path('app_homepage') }}">Traslochi Brandimarte</a></li>
                         </section>
                         <section class="header-navbar-menu-link">
                             <li class={{ app.request.pathinfo == "/" ? "header-navbar-menu-link-mark" : "" }}><a href="{{ path('app_homepage') }}">Home</a></li>
-                            <li class={{ app.request.pathinfo == "/chi-siamo" ? "header-navbar-menu-link-mark" : "" }}><a href="#">Chi siamo</a></li>
-                            <li><a href="#">Servizi</a></li>
-                            <li><a href="#">Preventivi</a></li>
-                            <li><a href="#">Contatti</a></li>
+                            <li class={{ app.request.pathinfo == "/chi-siamo" ? "header-navbar-menu-link-mark" : "" }}><a href="{{ path('app_chi_siamo') }}">Chi siamo</a></li>
+                            <li class={{ app.request.pathinfo == "/preventivi" ? "header-navbar-menu-link-mark" : "" }}><a href="{{ path('app_preventivi') }}">Preventivi</a></li>
+                            <li class={{ app.request.pathinfo == "/servizi" ? "header-navbar-menu-link-mark" : "" }}><a href="{{ path('app_servizi') }}">Servizi</a></li>
+                            <li class={{ app.request.pathinfo == "/contatti" ? "header-navbar-menu-link-mark" : "" }}><a href="{{ path('app_contatti') }}">Contatti</a></li>
                         </section>
                         <section class="header-navbar-menu-quote">
-                            <a href="#">
+                            <a href="{{ path('app_preventivi') }}">
                                 <section class="btn-animated-wrap">
                                     <section class="btn-animated">
                                         <li>Preventivo online gratuito</li>
@@ -63,8 +63,10 @@
 
             <section class="header-section">
                 <section class="header-section-title">
-                    <h1>Traslochi Brandimarte</li>
-                    <h2>Traslochi su Roma, nazionali ed internazionali</h2>
+                <h1>Traslochi Brandimarte</h1>
+                {% block header_sub_title %}
+                <h2>Traslochi su Roma, nazionali ed internazionali</h2>
+                {% endblock %}
                 </section>
             </section>
 

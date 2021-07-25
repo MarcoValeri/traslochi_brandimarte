@@ -1,0 +1,83 @@
+{% extends "base.html.twig" %}
+
+{# Set up the title of the chi-siamo page #}
+{% block title %}
+Chi siamo
+{% endblock %}
+
+{# Set up the header sub title #}
+{% block header_sub_title %}
+<h2>Chi siamo<h2>
+{% endblock %}
+
+{# Body block #}
+{% block body %}
+
+<main class="chisiamo-main">
+
+    <section class="chisiamo-main-video">
+        <section class="chisiamo-main-video-title">
+            <h2>Chi siamo</h2>
+        </section>
+        <section id="video-player" class="chisiamo-main-video-container">
+            <video id="video" poster="https://127.0.0.1:8000/images/roma-piazza-del-popolo.jpg" controls>
+                <source src="{{ asset('/videos/traslochi-brandimarte-video.mp4') }}" type="video/mp4">
+                Il tou browser non support HTML video
+            </video>
+            <button type="button" id="play_button"><i class="far fa-play-circle"></i></button>
+        </section>
+    </section>
+
+    <section class="chisiamo-main-container">
+        <section class="chisiamo-main-container-title">
+            <h2>Traslochi a Roma, nazionali ed internazionali</h2>
+        </section>
+        <section class="chisiamo-main-container-content">
+            <p>
+                L'impresa <span class="brand-font">Brandimarte Traslochi</span> opera nel settore <span class="highlight-font">da oltre 10 anni
+                </span> ed offre ai propri clienti vari tipologie di trasporti
+            </p>
+            <br>
+            <ul>
+                <li><i class="fas fa-truck-moving"></i> Traslochi nazionali <i class="fas fa-truck-moving"></i></li>
+                <br>
+                <li><i class="fas fa-plane-departure"></i> Traslochi internazionali <i class="fas fa-plane-arrival"></i></li>
+                <br>
+                <li><i class="fas fa-dolly"></i> Traslochi professionali <i class="fas fa-dolly"></i></li>
+                <br>
+                <li><i class="fas fa-box-open"></i> Traslochi di appartamenti <i class="fas fa-box-open"></i></li>
+                <br>
+                <li><i class="fas fa-people-carry"></i> Trasporto di pianoforti <i class="fas fa-people-carry"></i></li>
+                <br>
+                <li><i class="fas fa-building"></i> Traslochi di uffici <i class="fas fa-building"></i></li>
+            </ul>
+            <br>
+            <p>
+                Disponiamo inoltre di <span class="highlight-font">depositi sorvegliati 24 ore su 24</span><br>
+                <br>
+                Il <span class="highlight-font">nostro personale è a vostra disposizione</span> per soddisfare 
+                <span class="chisiamo-main-container-content-underline">qualunque esigenza</span><br>
+                <br>
+                <span class="highlight-font">Affidati alla nostra professionalità ed esperienza.</span><br>
+                <br>
+                <section class="header-navbar-menu-quote">
+                    <a href="{{ path('app_preventivi') }}">
+                        <section class="btn-animated-wrap">
+                            <section class="btn-animated">
+                                <p><span class="highlight-font">Chiamaci per un preventivo gratuito</span></p>
+                            </section>
+                        </section>
+                    </a>
+                </section>
+                <br>
+                Verremo a casa vostra per un <span class="highlight-font">sopralluogo gratuito e senza impegno</span> in occasione del quale i nostri
+                tecnici vi offriranno la loro consulenza<br>
+                <br>
+                <span class="chisiamo-main-container-content-signature signature-font">Andrea Brandimarte</span>
+            </p>
+        </section>
+    </section>
+
+</main>
+
+{% endblock %}
