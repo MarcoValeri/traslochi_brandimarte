@@ -17,4 +17,46 @@ Preventivi
         <img src="{{ asset('/images/under-construction.gif') }}" alt="Banner Under Construction">
     </section>
 </section>
+
+<main class="preventivi-main">
+    <section class="preventivi-container">
+        <section class="preventivi-container-title">
+            <h2>Richiedi un online gratuito</h2>
+            <p>
+                Compila il nostro preventivo online e ricevi il tuo preventivo
+                gratuito e senza impegno via e-mail in tempo reale
+            </p>
+        </section>
+        <section class="preventivi-container-form">
+            <form action="/" method="post">
+                <section class="preventivi-container-form-generality">
+                    <h4>Generalità</h4>
+                    <label for="name">Nome</label>
+                    <input id="name" name="name" type="text" value="">
+                    <label for="surname">Cognome</label>
+                    <input id="surname" name="surname" type="text" value="">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" value="">
+                </section>
+                <section class="preventivi-container-form-start">
+                    <h4>Luogo di partenza</h4>
+                    <label for="start-city">Città</label>
+                    <input id="start-city" name="start-city" type="text" value="">
+                    <label for="start-address">Indirizzo</label>
+                    <input id="start-address" name="start-address" type="text" value="">
+                    <label for="start-postcode">CAP</label>
+                    <input id="start-postcode" name="start-postcode" type="number" value="">
+                    <label id="start-floor">Piano</label>
+                    <input id="start-floor" name="start-floor" type="number" value="">
+                    <label for="start-lift">Ascensore</label>
+                    <select id="start-lift" name="start-lift">
+                        <option value="start-lift-empty"></option>
+                        <option value="start-lift-yes">Sì</option>
+                        <option value="start-lift-no">No</option>
+                    </select>
+                </section>
+            </form>
+        </section>
+    </section>
+</main>
 {% endblock %}
