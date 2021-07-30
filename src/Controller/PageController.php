@@ -6,6 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Request;
+
 class PageController extends AbstractController {
 
     /**
@@ -25,8 +30,8 @@ class PageController extends AbstractController {
     /**
      * @Route("/preventivi", name="app_preventivi")
      */
-    public function preventivi() {
-        return $this->render('pages/preventivi.html.twig');
+    public function preventivi(Request $request) {
+        return $this->render('pages/preventivi.html.twig', ['form' => $form->createView()]);
     }
 
     /**
@@ -34,13 +39,6 @@ class PageController extends AbstractController {
      */
     public function servizi() {
         return $this->render('pages/servizi.html.twig');
-    }
-
-    /**
-     * @Route("/contatti", name="app_contatti")
-     */
-    public function contatti() {
-        return $this->render('pages/contatti.html.twig');
     }
 
 }
