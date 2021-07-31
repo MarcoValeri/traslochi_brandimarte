@@ -18,10 +18,40 @@ Contatti
     </section>
 </section>
 
-<main>
-
-{{ form_start(form_contact) }}
-{{ form_end(form_contact) }}
-
+<main class="contatti-main">
+    <section class="contatti-main-title">
+        <h2>Contattaci per un preventivo o per maggiori informazioni</h2>
+        <p>
+            Contattaci tramite per richiedere un preventivo gratuito e senza impegno,
+            o per maggiori informazioni relative ai nostri servizi.
+            Se invece vai di fretta, sentiti libero di lasciare il tuo recapito telefonico,
+            appena possibile verrai richiamato da um membro del nostro staff.
+        </p>
+    </section>
+    <section class="contatti-main-form">
+        {{ form_start(form_contact) }}
+            <section class="contatti-main-form-errors">
+                {{ form_errors(form_contact) }}
+            </section>
+            <section class="contatti-main-form-name">
+                {{ form_row(form_contact.name) }}
+            </section>
+            <section class="contatti-main-form-surname">
+                {{ form_row(form_contact.surname) }}
+            </section>
+            <section class="contatti-main-form-email">
+                {{ form_row(form_contact.email) }}
+            </section>
+            <section class="contatti-main-form-telephone">
+                {{ form_row(form_contact.telephone) }}
+            </section>
+            <section class="contatti-main-form-message">
+                {{ form_row(form_contact.message) }}
+            </section>
+            <section class="contatti-main-form-submit">
+                {{ form_row(form_contact.submit) }}
+            </section>
+        {{ form_end(form_contact) }}
+    </section>
 </main>
 {% endblock %}

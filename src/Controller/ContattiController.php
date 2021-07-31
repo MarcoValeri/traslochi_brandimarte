@@ -6,10 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class ContattiController extends AbstractController {
 
@@ -27,11 +32,43 @@ class ContattiController extends AbstractController {
         * the request of the user
         */
         $form_contact = $this->createFormBuilder([])
-            ->add('name', TextType::class, ['label' => 'Nome', 'required' => true])
-            ->add('surname', TextType::class, ['label' => 'Cognome', 'required' => true])
-            ->add('email', EmailType::class, ['label' => 'Email', 'required' => true])
-            ->add('message', TextareaType::class, ['label' => 'Messaggio', 'required' => true])
-            ->add('submit', SubmitType::class, ['label' => 'Invia'])
+            ->add('name', TextType::class, 
+                [
+                    'label' => 'Nome',
+                    'required' => true,
+                    'constraints' => 
+                        [new Length(['min' => 2, 'max' => 20]), new Regex(['pattern' => '/[a-zA-Z]/', 'message' => 'Errore: inserire solo lettere'])]
+                    ])
+            ->add('surname', TextType::class,
+                [
+                    'label' => 'Cognome',
+                    'required' => true,
+                    'constraints' =>
+                        [new Length(['min' => 2, 'max' => 20]), new Regex(['pattern' => '/[a-zA-Z]/', 'message' => 'Errore: insirire solo lettere'])]
+                    ])
+            ->add('email', EmailType::class,
+                [
+                    'label' => 'Email',
+                    'required' => true
+                    ])
+            ->add('telephone', NumberType::class,
+                [
+                    'label' => 'Telefono',
+                    'required' => false,
+                    'constraints' =>
+                        [new Length(['min' => 5, 'max' => 20]), new Regex(['pattern' => '/[0-9]/', 'message' => 'Errore: insirire solo numeri e/o il + per i prefissi internazionali'])]
+                    ])
+            ->add('message', TextareaType::class,
+                [
+                    'label' => 'Messaggio',
+                    'required' => true,
+                    'constraints' =>
+                        [new Length(['min' => 10, 'max' => 500])]
+                    ])
+            ->add('submit', SubmitType::class,
+                [
+                    'label' => 'Invia'
+                    ])
             ->getForm();
 
         $form_contact->handleRequest($request);
