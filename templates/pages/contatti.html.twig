@@ -12,11 +12,11 @@ Contatti
 
 {# Body block #}
 {% block body %}
-<section class="under-construction">
+{# <section class="under-construction">
     <section class="under-construction-container">
         <img src="{{ asset('/images/under-construction.gif') }}" alt="Banner Under Construction">
     </section>
-</section>
+</section> #}
 
 <main class="contatti-main">
     <section class="contatti-main-title">
@@ -24,15 +24,13 @@ Contatti
         <p>
             Contattaci tramite per richiedere un preventivo gratuito e senza impegno,
             o per maggiori informazioni relative ai nostri servizi.
+            <br>
             Se invece vai di fretta, sentiti libero di lasciare il tuo recapito telefonico,
             appena possibile verrai richiamato da um membro del nostro staff.
         </p>
     </section>
     <section class="contatti-main-form">
         {{ form_start(form_contact) }}
-            <section class="contatti-main-form-errors">
-                {{ form_errors(form_contact) }}
-            </section>
             <section class="contatti-main-form-name">
                 {{ form_row(form_contact.name) }}
             </section>

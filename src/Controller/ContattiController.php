@@ -34,7 +34,7 @@ class ContattiController extends AbstractController {
         $form_contact = $this->createFormBuilder([])
             ->add('name', TextType::class, 
                 [
-                    'label' => 'Nome',
+                    'label' => 'Nome *',
                     'required' => true,
                     'constraints' => 
                         [
@@ -52,7 +52,7 @@ class ContattiController extends AbstractController {
                     ])
             ->add('surname', TextType::class,
                 [
-                    'label' => 'Cognome',
+                    'label' => 'Cognome *',
                     'required' => true,
                     'constraints' =>
                         [
@@ -70,13 +70,13 @@ class ContattiController extends AbstractController {
                     ])
             ->add('email', EmailType::class,
                 [
-                    'label' => 'Email',
+                    'label' => 'Email *',
                     'required' => true,
                     'invalid_message' => 'Perfavore, inserire un indirizzo email valido'
                     ])
             ->add('telephone', NumberType::class,
                 [
-                    'label' => 'Telefono',
+                    'label' => 'Telefono (non obbligatorio)',
                     'required' => false,
                     'invalid_message' => 'Numero di telefono non valido',
                     'constraints' =>
@@ -93,7 +93,7 @@ class ContattiController extends AbstractController {
                     ])
             ->add('message', TextareaType::class,
                 [
-                    'label' => 'Messaggio',
+                    'label' => 'Messaggio *',
                     'required' => true,
                     'constraints' =>
                         [

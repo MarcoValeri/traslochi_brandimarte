@@ -1,0 +1,164 @@
+.contatti-main {
+    width: 80%;
+    margin: 4rem auto 4rem auto;
+    padding: 2rem;
+    color: $blue_font;
+
+    .contatti-main-title {
+
+        text-align: center;
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+    }
+
+    .contatti-main-form {
+
+        form {
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "contatti-main-form-name contatti-main-form-surname"
+            "contatti-main-form-email contatti-main-form-telephone"
+            "contatti-main-form-message contatti-main-form-message"
+            "contatti-main-form-submit contatti-main-form-submit";
+
+            // Set rules for ul that appears when form print out some errors
+            ul {
+                li {
+                    list-style: none;
+                    color: #ff0000;
+                    margin: .5rem;
+                }
+            }
+
+            label,
+            input {
+                display: block;
+                font-size: 1.2rem;
+                margin: .5rem;
+            }
+
+            input {
+                width: 80%;
+                padding: .5rem;
+                border-radius: 5px;
+            }
+
+            .contatti-main-form-errors {
+                grid-area: contatti-main-form-errors;
+            }
+
+            .contatti-main-form-name {
+                grid-area: contatti-main-form-name;
+            }
+
+            .contatti-main-form-surname {
+                grid-area: contatti-main-form-surname;
+            }
+
+            .contatti-main-form-email {
+                grid-area: contatti-main-form-email;
+            }
+
+            .contatti-main-form-telephone {
+                grid-area: contatti-main-form-telephone;
+            }
+
+            .contatti-main-form-message {
+                grid-area: contatti-main-form-message;
+
+                textarea {
+                    width: 90%;
+                    margin: .5rem;
+                    padding: .5rem;
+                    height: auto;
+                    min-height: 10rem;
+                    font-size: 1.2rem;
+                    border-radius: 5px;
+                }
+
+            }
+
+            .contatti-main-form-submit {
+                grid-area: contatti-main-form-submit;
+                margin: .5rem;
+
+                button {
+                    font-size: 1.2rem;
+                    padding: .5rem;
+                    border-radius: 5px;
+                    background-color: #fff;
+                    border: 1px solid $blue_font;
+
+                    &:hover {
+                        color: $green_font;
+                        border: 1px solid $green_font;
+                        box-shadow: 5px 10px 8px #888888;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 767px
+*/
+@media (max-width: 767px) {
+
+    .contatti-main {
+        width: 90%;
+        padding: .5rem;
+
+        .contatti-main-title {
+
+            h2 {
+                font-size: 2rem;
+            }
+    
+            p {
+                font-size: 1.2rem;
+            }
+    
+        }
+
+        .contatti-main-form {
+
+            form {
+                width: 100%;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                "contatti-main-form-name"
+                "contatti-main-form-surname"
+                "contatti-main-form-email"
+                "contatti-main-form-telephone"
+                "contatti-main-form-message"
+                "contatti-main-form-submit";
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 767px
+*/
