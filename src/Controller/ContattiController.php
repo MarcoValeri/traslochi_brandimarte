@@ -37,33 +37,73 @@ class ContattiController extends AbstractController {
                     'label' => 'Nome',
                     'required' => true,
                     'constraints' => 
-                        [new Length(['min' => 2, 'max' => 20]), new Regex(['pattern' => '/[a-zA-Z]/', 'message' => 'Errore: inserire solo lettere'])]
+                        [
+                            new Length([
+                                'min' => 2,
+                                'max' => 20,
+                                'minMessage' => 'Nome è troppo corto, dovrebbe essere di 2 caratteri o più lungo',
+                                'maxMessage' => 'Nome è troppo lungo, dovrebbe essere di massimo 20 caratteri'
+                            ]),
+                            new Regex([
+                                'pattern' => '/[a-zA-Z]/',
+                                'message' => 'Errore: inserire solo lettere'
+                            ])
+                        ]
                     ])
             ->add('surname', TextType::class,
                 [
                     'label' => 'Cognome',
                     'required' => true,
                     'constraints' =>
-                        [new Length(['min' => 2, 'max' => 20]), new Regex(['pattern' => '/[a-zA-Z]/', 'message' => 'Errore: insirire solo lettere'])]
+                        [
+                            new Length([
+                                'min' => 2,
+                                'max' => 20,
+                                'minMessage' => 'Cognome è troppo corto, dovrebbe essere di 2 caratteri o più lungo',
+                                'maxMessage' => 'Cognome è troppo lungo, dovrebbe essere di massimo 20 caratteri'
+                            ]),
+                            new Regex([
+                                'pattern' => '/[a-zA-Z]/',
+                                'message' => 'Errore: insirire solo lettere'
+                            ])
+                        ]
                     ])
             ->add('email', EmailType::class,
                 [
                     'label' => 'Email',
-                    'required' => true
+                    'required' => true,
+                    'invalid_message' => 'Perfavore, inserire un indirizzo email valido'
                     ])
             ->add('telephone', NumberType::class,
                 [
                     'label' => 'Telefono',
                     'required' => false,
+                    'invalid_message' => 'Numero di telefono non valido',
                     'constraints' =>
-                        [new Length(['min' => 5, 'max' => 20]), new Regex(['pattern' => '/[0-9]/', 'message' => 'Errore: insirire solo numeri e/o il + per i prefissi internazionali'])]
+                        [
+                            new Length([
+                                'min' => 5,
+                                'max' => 20
+                            ]),
+                            new Regex([
+                                'pattern' => '/[0-9]/',
+                                'message' => 'Errore: insirire solo numeri e/o il + per i prefissi internazionali'
+                                ])
+                        ]
                     ])
             ->add('message', TextareaType::class,
                 [
                     'label' => 'Messaggio',
                     'required' => true,
                     'constraints' =>
-                        [new Length(['min' => 10, 'max' => 500])]
+                        [
+                            new Length([
+                                'min' => 10,
+                                'max' => 500,
+                                'minMessage' => 'Messaggio è troppo corto, dovrebbe essere di 10 caratteri o più lungo',
+                                'maxMessage' => 'Cognome è troppo lungo, dovrebbe essere di massimo 500 caratteri'
+                                ])
+                        ]
                     ])
             ->add('submit', SubmitType::class,
                 [
