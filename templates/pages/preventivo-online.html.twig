@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{# Set up title of the preventivi page #}
+{% block title %}
+Preventivo online
+{% endblock %}
+
+{# Set up the header sub title #}
+{% block header_sub_title %}
+<h2>Preventivo online</h2>
+{% endblock %}
+
+{% block body %}
+<main class="preventivo-main">
+    {{ form_start(form_quote) }}
+
+    {{ form_end(form_quote) }}
+</main>
+{% endblock %}

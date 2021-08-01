@@ -72,7 +72,7 @@ class ContattiController extends AbstractController {
                 [
                     'label' => 'Email *',
                     'required' => true,
-                    'invalid_message' => 'Perfavore, inserire un indirizzo email valido'
+                    'invalid_message' => 'Errore: indirizzo email non valido'
                     ])
             ->add('telephone', NumberType::class,
                 [
