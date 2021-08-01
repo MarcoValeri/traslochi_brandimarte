@@ -1,0 +1,248 @@
+.preventivi-main {
+    width: 90%;
+    height: auto;
+    min-height: 50vh;
+    margin: 2rem auto 2rem auto;
+
+    .preventivi-main-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "preventivi-main-container-title preventivi-main-container-title"
+        "preventivi-main-container-online preventivi-main-container-contact"
+        "preventivi-main-container-email preventivi-main-container-questions";
+
+        background-image: linear-gradient(
+            to right bottom,
+            rgba(247, 247, 247, 0.8),
+            rgba(210, 241, 217, 0.8)
+        );
+        background-size: cover;
+        background-position: top;
+        position: relative;
+
+
+        color: $blue_font;
+
+        .preventivi-main-container-title {
+            grid-area: preventivi-main-container-title;
+            text-align: center;
+            font-size: 2rem;
+            padding: 1rem;
+            border: 1px solid #fff;
+        }
+
+        // General rules for the following containers
+        .preventivi-main-container-box {
+            padding: 2rem;
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: .5rem;
+            }
+
+            p {
+                @include brand;
+                font-size: 1.2rem;
+                line-height: 1.6;
+            }
+
+            ul {
+
+                @include highlight;
+
+                li {
+                    list-style: none;
+                    margin: 1rem;
+
+                    .fa-phone {
+                        font-size: 2rem;
+                        margin: .5rem;
+                        color: #000080;
+                    }
+        
+                    .fa-whatsapp {
+                        font-size: 2rem;
+                        margin: .5rem;
+                        color: #25D366;
+                    }
+        
+                    .fa-envelope {
+                        font-size: 2rem;
+                        margin: .5rem;
+                        color: #000;
+                    }
+
+                    a {
+                        text-decoration: none;
+                    }
+
+                }
+            }
+
+
+        }
+
+        .preventivi-main-container-online {
+            grid-area: preventivi-main-container-online;
+            border: 1px solid #fff;
+
+            .preventivi-main-container-online-btn {
+                width: 30%;
+                margin-top: 1rem;
+                @include btn-animated-flow;
+
+                a {
+                    text-decoration: none;
+                    text-align: center;
+                    font-size: 1.2rem;
+                }
+
+            }
+
+        }
+
+        .preventivi-main-container-contact {
+            grid-area: preventivi-main-container-contact;
+            border: 1px solid #fff;
+        }
+
+        .preventivi-main-container-email {
+            grid-area: preventivi-main-container-email;
+            border: 1px solid #fff;
+        }
+
+        .preventivi-main-container-questions {
+            grid-area: preventivi-main-container-questions;
+            @include signature;
+            border: 1px solid #fff;
+
+            .signature-font {
+                margin-top: .5rem;
+                font-size: 3.5rem;
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 1024px
+*/
+@media (max-width: 1024px) {
+
+    .preventivi-main {
+
+        .preventivi-main-container {
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "preventivi-main-container-title"
+            "preventivi-main-container-online"
+            "preventivi-main-container-contact"
+            "preventivi-main-container-email"
+            "preventivi-main-container-questions";
+
+            text-align: center;
+
+            .preventivi-main-container-online {
+                
+                .preventivi-main-container-online-btn {
+                    width: 50%;
+                    margin: 2rem auto 2rem auto;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 767px
+*/
+@media (max-width: 767px) {
+
+    .preventivi-main {
+
+        .preventivi-main-container {
+
+            .preventivi-main-container-title {
+                font-size: 1.5rem;
+                padding: .5;
+            }
+
+            .preventivi-main-container-box {
+                padding: .5rem;
+
+                ul {
+
+                    li {
+
+                        a {
+                            font-size: .8rem;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 480px
+*/
+@media (max-width: 480px) {
+
+    .preventivi-main {
+
+        .preventivi-main-container {
+
+            .preventivi-main-container-box {
+                padding: .5rem;
+
+                p {
+                    font-size: 1rem;
+                }
+
+                ul {
+
+                    li {
+
+                        i,
+                        span {
+                            display: block;
+                            margin: 1rem 0rem;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .preventivi-main-container-questions {
+
+                .signature-font {
+                    font-size: 2.5rem;
+                }
+
+            }
+
+        }
+
+    }
+
+}

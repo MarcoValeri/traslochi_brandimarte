@@ -28,13 +28,6 @@ class PageController extends AbstractController {
     }
 
     /**
-     * @Route("/preventivi", name="app_preventivi")
-     */
-    public function preventivi(Request $request) {
-        return $this->render('pages/preventivi.html.twig', ['form' => $form->createView()]);
-    }
-
-    /**
      * @Route("/servizi", name="app_servizi")
      */
     public function servizi() {
