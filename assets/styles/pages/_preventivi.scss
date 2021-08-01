@@ -2,6 +2,7 @@
     width: 90%;
     height: auto;
     min-height: 50vh;
+    font-family: 'Noto Serif TC', serif;
     margin: 2rem auto 2rem auto;
 
     .preventivi-main-container {
@@ -151,7 +152,7 @@
                 
                 .preventivi-main-container-online-btn {
                     width: 50%;
-                    margin: 2rem auto 2rem auto;
+                    margin: 2rem auto;
                 }
 
             }
@@ -207,11 +208,15 @@
 @media (max-width: 480px) {
 
     .preventivi-main {
+        width: 95%;
 
         .preventivi-main-container {
 
             .preventivi-main-container-box {
-                padding: .5rem;
+
+                h2 {
+                    font-size: 1.5rem;
+                }
 
                 p {
                     font-size: 1rem;
@@ -220,6 +225,8 @@
                 ul {
 
                     li {
+
+                        margin: .5rem;
 
                         i,
                         span {
