@@ -79,14 +79,16 @@ class PreventiviController extends AbstractController {
                 ])
             ->add('telephone', NumberType::class,
                 [
-                    'label' => 'Telefono (non obbligatorio)',
-                    'required' => false,
+                    'label' => 'Telefono *',
+                    'required' => true,
                     'invalid_message' => 'Numero di telefono non valido',
                     'constraints' =>
                         [
                             new Length([
                                 'min' => 5,
-                                'max' => 20
+                                'max' => 20,
+                                'minMessage' => 'Numero di telefono troppo corto',
+                            'maxMessage' => 'Numero di telefono troppo lungo'
                             ]),
                             new Regex([
                                 'pattern' => '/[0-9]/',
@@ -278,20 +280,8 @@ class PreventiviController extends AbstractController {
                 'label' => 'Corridoio',
                 'required' => false
             ])
-            ->add('corridor_two', CheckboxType::class, [
-                'label' => 'Secondo corridoio',
-                'required' => false
-            ])
-            ->add('corridor_three', CheckboxType::class, [
-                'label' => 'Terzo corridoio',
-                'required' => false
-            ])
             ->add('kitchen', CheckboxType::class, [
                 'label' => 'Cucina',
-                'required' => false
-            ])
-            ->add('kitchen_two', CheckboxType::class, [
-                'label' => 'Seconda Cucina',
                 'required' => false
             ])
             ->add('dinning_room', CheckboxType::class, [
@@ -302,36 +292,12 @@ class PreventiviController extends AbstractController {
                 'label' => 'Salone',
                 'required' => false
             ])
-            ->add('lounge_two', CheckboxType::class, [
-                'label' => 'Secondo Salone',
-                'required' => false
-            ])
-            ->add('lounge_three', CheckboxType::class, [
-                'label' => 'Terzo Salone',
-                'required' => false
-            ])
             ->add('bedroom', CheckboxType::class, [
                 'label' => 'Camera da letto',
                 'required' => false
             ])
-            ->add('bedroom_two', CheckboxType::class, [
-                'label' => 'Seconda Camera da letto',
-                'required' => false
-            ])
-            ->add('bedroom_three', CheckboxType::class, [
-                'label' => 'Terza Camera da letto',
-                'required' => false
-            ])
-            ->add('bedroom_three', CheckboxType::class, [
-                'label' => 'Terza Camera da letto',
-                'required' => false
-            ])
             ->add('guest_room', CheckboxType::class, [
                 'label' => 'Camera degli ospiti',
-                'required' => false
-            ])
-            ->add('guest_room_two', CheckboxType::class, [
-                'label' => 'Terza Camera degli ospiti',
                 'required' => false
             ])
             ->add('kids_room', CheckboxType::class, [
@@ -350,10 +316,6 @@ class PreventiviController extends AbstractController {
                 'label' => 'Altra camera',
                 'required' => false
             ])
-            ->add('other_room_two', CheckboxType::class, [
-                'label' => 'Seconda altra camera',
-                'required' => false
-            ])
             ->add('bathroom', CheckboxType::class, [
                 'label' => 'Bagno',
                 'required' => false
@@ -362,60 +324,16 @@ class PreventiviController extends AbstractController {
                 'label' => 'Secondo Bagno',
                 'required' => false
             ])
-            ->add('bathroom_three', CheckboxType::class, [
-                'label' => 'Terzo Bagno',
-                'required' => false
-            ])
             ->add('study', CheckboxType::class, [
                 'label' => 'Studio',
-                'required' => false
-            ])
-            ->add('study_two', CheckboxType::class, [
-                'label' => 'Secondo Studio',
-                'required' => false
-            ])
-            ->add('study_three', CheckboxType::class, [
-                'label' => 'Terzo Studio',
-                'required' => false
-            ])
-            ->add('study_four', CheckboxType::class, [
-                'label' => 'Quarto Studio',
-                'required' => false
-            ])
-            ->add('study_five', CheckboxType::class, [
-                'label' => 'Qinto Studio',
                 'required' => false
             ])
             ->add('office', CheckboxType::class, [
                 'label' => 'Ufficio',
                 'required' => false
             ])
-            ->add('office_two', CheckboxType::class, [
-                'label' => 'Secondo Ufficio',
-                'required' => false
-            ])
-            ->add('office_three', CheckboxType::class, [
-                'label' => 'Terzo Ufficio',
-                'required' => false
-            ])
-            ->add('office_four', CheckboxType::class, [
-                'label' => 'Quarto Ufficio',
-                'required' => false
-            ])
-            ->add('office_five', CheckboxType::class, [
-                'label' => 'Quinto Ufficio',
-                'required' => false
-            ])
             ->add('canteen', CheckboxType::class, [
                 'label' => 'Cantina',
-                'required' => false
-            ])
-            ->add('canteen_two', CheckboxType::class, [
-                'label' => 'Seconda Cantina',
-                'required' => false
-            ])
-            ->add('canteen_three', CheckboxType::class, [
-                'label' => 'Terza Cantina',
                 'required' => false
             ])
             ->add('terrace', CheckboxType::class, [
@@ -430,14 +348,6 @@ class PreventiviController extends AbstractController {
                 'label' => 'Terzo Terrazzo',
                 'required' => false
             ])
-            ->add('terrace_four', CheckboxType::class, [
-                'label' => 'Quarto Terrazzo',
-                'required' => false
-            ])
-            ->add('terrace_five', CheckboxType::class, [
-                'label' => 'Quinto Terrazzo',
-                'required' => false
-            ])
             ->add('balcony', CheckboxType::class, [
                 'label' => 'Balcone',
                 'required' => false
@@ -450,29 +360,17 @@ class PreventiviController extends AbstractController {
                 'label' => 'Terzo Balcone',
                 'required' => false
             ])
-            ->add('balcony_four', CheckboxType::class, [
-                'label' => 'Quarto Balcone',
-                'required' => false
-            ])
-            ->add('balcony_five', CheckboxType::class, [
-                'label' => 'Quinto Balcone',
-                'required' => false
-            ])
             ->add('garage', CheckboxType::class, [
                 'label' => 'Garage',
                 'required' => false
             ])
-            ->add('garage_two', CheckboxType::class, [
-                'label' => 'Secondo Garage',
+            ->add('box', CheckboxType::class, [
+                'label' => 'Box',
                 'required' => false
             ])
-            ->add('privacy_policy', CheckboxType::class, [
-                'label' => "Dichiaro di aver preso visione dell'Informativa ai sensi del Decreto Legislativo 196/2003 e del Regolamento (UE) 2016/679 del Parlamento Europeo e del Consiglio del 27 Aprile 2016 (GDPR)",
-                'required' => true
-            ])
-            ->add('privacy_policy_two', CheckboxType::class, [
-                'label' => 'Autorizzo Traslochi Brandimarte SRL al trattamento dei miei dati personali per attività promozionali, pubblicitarie e di marketing dei propri prodotti e servizi',
-                'required' => true
+            ->add('external', CheckboxType::class, [
+                'label' => 'Esterni',
+                'required' => false
             ])
             ->add('message', TextareaType::class,
                 [
@@ -487,6 +385,14 @@ class PreventiviController extends AbstractController {
                         'maxMessage' => 'Cognome è troppo lungo, dovrebbe essere di massimo 500 caratteri'
                         ])
                 ]
+            ])
+            ->add('privacy_policy', CheckboxType::class, [
+                'label' => "Dichiaro di aver preso visione dell'Informativa ai sensi del Decreto Legislativo 196/2003 e del Regolamento (UE) 2016/679 del Parlamento Europeo e del Consiglio del 27 Aprile 2016 (GDPR)",
+                'required' => true
+            ])
+            ->add('privacy_policy_two', CheckboxType::class, [
+                'label' => 'Autorizzo Traslochi Brandimarte SRL al trattamento dei miei dati personali per attività promozionali, pubblicitarie e di marketing dei propri prodotti e servizi',
+                'required' => true
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Invia'
@@ -520,8 +426,164 @@ class PreventiviController extends AbstractController {
 
                 $deposit = $form_quote->get('deposit')->getData();
 
+                /* 
+                * Create array and save inside the following rooms if
+                * they exist
+                */
+                $rooms = array();
+
+                
                 $entrance = $form_quote->get('entrance')->getData();
-                $entrance === true ? $entrance = "Corridoio" : $entrance = "";
+                $entrance === true ? $entrance = "Ingresso" : $entrance = "";
+                $entrance !== "" ? array_push($rooms, $entrance) : "";
+
+                $corridor = $form_quote->get('corridor')->getData();
+                $corridor === true ? $corridor = "Corridoio" : $corridor = "";
+                $corridor !== "" ? array_push($rooms, $corridor) : "";
+
+                $kitchen = $form_quote->get('kitchen')->getData();
+                $kitchen === true ? $kitchen = "Cucina" : $kitchen = "";
+                $kitchen !== "" ? array_push($rooms, $kitchen) : "";
+
+                $dinning_room = $form_quote->get('dinning_room')->getData();
+                $dinning_room === true ? $dinning_room = "Camera da pranzo" : $dinning_room = "";
+                $dinning_room !== "" ? array_push($rooms, $dinning_room) : "";
+
+                $lounge = $form_quote->get('lounge')->getData();
+                $lounge === true ? $lounge = "Salone" : $lounge = "";
+                $lounge !== "" ? array_push($rooms, $lounge) : "";
+
+                $bedroom = $form_quote->get('bedroom')->getData();
+                $bedroom === true ? $bedroom = "Camera da letto" : $bedroom = "";
+                $bedroom !== "" ? array_push($rooms, $bedroom) : "";
+
+                $guest_room = $form_quote->get('guest_room')->getData();
+                $guest_room === true ? $guest_room = "Camera degli ospiti" : $guest_room = "";
+                $guest_room !== "" ? array_push($rooms, $guest_room) : "";
+
+                $kids_room = $form_quote->get('kids_room')->getData();
+                $kids_room === true ? $kids_room = "Camera dei ragazzi" : $kids_room = "";
+                $kids_room !== "" ? array_push($rooms, $kids_room) : "";
+
+                $kids_room_two = $form_quote->get('kids_room_two')->getData();
+                $kids_room_two === true ? $kids_room_two = "Seconda camera dei ragazzi" : $kids_room_two = "";
+                $kids_room_two !== "" ? array_push($rooms, $kids_room_two) : "";
+
+                $kids_room_three = $form_quote->get('kids_room_three')->getData();
+                $kids_room_three === true ? $kids_room_three = "Terza camera dei ragazzi" : $kids_room_three = "";
+                $kids_room_three !== "" ? array_push($rooms, $kids_room_three) : "";
+
+                $other_room = $form_quote->get('other_room')->getData();
+                $other_room === true ? $other_room = "Altra stanza" : $other_room = "";
+                $other_room !== "" ? array_push($rooms, $other_room) : "";
+
+                $bathroom = $form_quote->get('bathroom')->getData();
+                $bathroom === true ? $bathroom = "Bagno" : $bathroom = "";
+                $bathroom !== "" ? array_push($rooms, $bathroom) : "";
+
+                $bathroom_two = $form_quote->get('bathroom_two')->getData();
+                $bathroom_two === true ? $bathroom_two = "Secondo bagno" : $bathroom_two = "";
+                $bathroom_two !== "" ? array_push($rooms, $bathroom_two) : "";
+
+                $study = $form_quote->get('study')->getData();
+                $study === true ? $study = "Studio" : $study = "";
+                $study !== "" ? array_push($rooms, $study) : "";
+
+                $office = $form_quote->get('office')->getData();
+                $office === true ? $office = "Ufficio" : $office = "";
+                $office !== "" ? array_push($rooms, $office) : "";
+
+                $canteen = $form_quote->get('canteen')->getData();
+                $canteen === true ? $canteen = "Cantina" : $canteen = "";
+                $canteen !== "" ? array_push($rooms, $canteen) : "";
+
+                $terrace = $form_quote->get('terrace')->getData();
+                $terrace === true ? $terrace = "Terrazzo" : $terrace = "";
+                $terrace !== "" ? array_push($rooms, $terrace) : "";
+
+                $terrace_two = $form_quote->get('terrace_two')->getData();
+                $terrace_two === true ? $terrace_two = "Secondo terrazzo" : $terrace_two = "";
+                $terrace_two !== "" ? array_push($rooms, $terrace_two) : "";
+
+                $terrace_three = $form_quote->get('terrace_three')->getData();
+                $terrace_three === true ? $terrace_three = "Terzo terrazzo" : $terrace_three = "";
+                $terrace_three !== "" ? array_push($rooms, $terrace_three) : "";
+
+                $balcony = $form_quote->get('balcony')->getData();
+                $balcony === true ? $balcony = "Balcone" : $balcony = "";
+                $balcony !== "" ? array_push($rooms, $balcony) : "";
+
+                $balcony_two = $form_quote->get('balcony_two')->getData();
+                $balcony_two === true ? $balcony_two = "Secondo balcone" : $balcony_two = "";
+                $balcony_two !== "" ? array_push($rooms, $balcony_two) : "";
+
+                $balcony_three = $form_quote->get('balcony_three')->getData();
+                $balcony_three === true ? $balcony_three = "Terzo balcone" : $balcony_three = "";
+                $balcony_three !== "" ? array_push($rooms, $balcony_three) : "";
+
+                $garage = $form_quote->get('garage')->getData();
+                $garage === true ? $garage = "Garage" : $garage = "";
+                $garage !== "" ? array_push($rooms, $garage) : "";
+
+                $box = $form_quote->get('box')->getData();
+                $box === true ? $box = "Box" : $box = "";
+                $box !== "" ? array_push($rooms, $box) : "";
+
+                $external = $form_quote->get('external')->getData();
+                $external === true ? $external = "Esterni" : $external = "";
+                $external !== "" ? array_push($rooms, $external) : "";
+
+                $message = $form_quote->get('message')->getData();
+                strlen($message) < 5 ? $message = "nessuna" : "";
+
+                /*
+                * Set email message
+                */
+                $email_message = "Preventivo online Traslochi Brandimarte \n";
+                $email_message .= "Preventivo richiesto da: \n";
+                $email_message .= "Nome: $name \n";
+                $email_message .= "Cognome: $surname \n";
+                $email_message .= "Telefono: $phone \n";
+                $email_message .= "Email: $email \n";
+                $email_message .= "\n\n\n";
+
+                $email_message .= "Indirizzo di partenza: \n";
+                $email_message .= "$start_address \n";
+                $email_message .= "Città $start_city \n";
+                $email_message .= "CAP: $start_cap \n";
+                $email_message .= "Piano: $start_floor \n";
+                $email_message .= "Ascensore: $start_lift \n";
+                $email_message .= "\n\n\n";
+
+                $email_message .= "Indirizzo di arrivo: \n";
+                $email_message .= "$end_address \n";
+                $email_message .= "Città $end_city \n";
+                $email_message .= "CAP: $end_cap \n";
+                $email_message .= "Piano: $end_floor \n";
+                $email_message .= "Ascensore: $end_lift \n";
+                $email_message .= "\n\n\n";
+
+                $email_message .= "Necessità di deposito: $deposit \n";
+                $email_message .= "\n\n\n";
+
+                $email_message .= "Camere selezionate: \n";
+
+                foreach ($rooms as $room) {
+                    $email_message .= "- $room \n";
+                }
+
+                $email_message .= "\n\n\n";
+
+                $email_message .= "Note del cliente: \n";
+                $email_message .= $message;
+
+                /*
+                * Format email message and
+                * send the email
+                */
+                $email_message = wordwrap($email_message, 70);
+
+                mail("info@marcovaleri.net", "Preventivo online Traslochi Brandimarte", $email_message);
 
 
             }
