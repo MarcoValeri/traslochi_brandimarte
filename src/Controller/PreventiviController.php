@@ -41,6 +41,10 @@ class PreventiviController extends AbstractController {
         * email with the data of the user
         */
         $form_quote = $this->createFormBuilder([])
+            ->add('privacy_authorization', CheckboxType::class, [
+                'label' => 'Autorizzo Traslochi Brandimarte SRL al trattamento dei miei dati personali per attività promozionali, pubblicitarie e di marketing dei propri prodotti e servizi',
+                'required' => true
+            ])
             ->add('name', TextType::class,
                 [
                     'label' => 'Nome *',
@@ -102,7 +106,7 @@ class PreventiviController extends AbstractController {
                     'required' => true,
                     'invalid_message' => 'Errore: indirizzo email non valido'
                 ])
-            ->add('start-address', TextType::class,
+            ->add('start_address', TextType::class,
                 [
                     'label' => 'Indirizzo di partenza *',
                     'required' => true,
@@ -120,7 +124,7 @@ class PreventiviController extends AbstractController {
                         ])
                     ]
                 ])
-            ->add('start-city', TextType::class,
+            ->add('start_city', TextType::class,
                 [
                     'label' => 'Città di partenza *',
                     'required' => true,
@@ -138,7 +142,7 @@ class PreventiviController extends AbstractController {
                         ])
                     ]
                 ])
-            ->add('start-cap', NumberType::class,
+            ->add('start_cap', NumberType::class,
                 [
                     'label' => 'CAP di partenza *',
                     'required' => true,
@@ -155,7 +159,7 @@ class PreventiviController extends AbstractController {
                             ])
                     ]
                 ])
-            ->add('start-floor', NumberType::class,
+            ->add('start_floor', NumberType::class,
                 [
                     'label' => 'Piano di partenza *',
                     'required' => true,
@@ -172,7 +176,7 @@ class PreventiviController extends AbstractController {
                             ])
                     ]
                 ])
-            ->add('start-lift', ChoiceType::class, [
+            ->add('start_lift', ChoiceType::class, [
                 'label' => 'Ascensore (partenza) *',
                 'required' => true,
                 'invalid_message' => 'Errore: cambo obbligatorio',
@@ -182,7 +186,7 @@ class PreventiviController extends AbstractController {
                     'No' => false
                 ],
             ])
-            ->add('end-address', TextType::class,
+            ->add('end_address', TextType::class,
                 [
                     'label' => 'Indirizzo di arrivo *',
                     'required' => true,
@@ -200,7 +204,7 @@ class PreventiviController extends AbstractController {
                         ])
                     ]
                 ])
-            ->add('end-city', TextType::class,
+            ->add('end_city', TextType::class,
                 [
                     'label' => 'Città di arrivo *',
                     'required' => true,
@@ -218,7 +222,7 @@ class PreventiviController extends AbstractController {
                         ])
                     ]
                 ])
-            ->add('end-cap', NumberType::class,
+            ->add('end_cap', NumberType::class,
                 [
                     'label' => 'CAP di arrivo *',
                     'required' => true,
@@ -235,7 +239,7 @@ class PreventiviController extends AbstractController {
                             ])
                     ]
                 ])
-            ->add('end-floor', NumberType::class,
+            ->add('end_floor', NumberType::class,
                 [
                     'label' => 'Piano di arrivo *',
                     'required' => true,
@@ -252,7 +256,7 @@ class PreventiviController extends AbstractController {
                             ])
                     ]
                 ])
-            ->add('end-lift', ChoiceType::class, [
+            ->add('end_lift', ChoiceType::class, [
                 'label' => 'Ascensore (arrivo) *',
                 'required' => true,
                 'invalid_message' => 'Errore: cambo obbligatorio',
@@ -376,6 +380,9 @@ class PreventiviController extends AbstractController {
                 [
                 'label' => 'Informazioni aggiuntive',
                 'required' => false,
+                'attr' => [
+                    'placeholder' => 'Un ultimo sforzo: più dettagliate saranno le informazioni che ci darai, più preciso sarà il preventivo che ti forniremo'
+                ],
                 'constraints' =>
                 [
                     new Length([
@@ -388,10 +395,6 @@ class PreventiviController extends AbstractController {
             ])
             ->add('privacy_policy', CheckboxType::class, [
                 'label' => "Dichiaro di aver preso visione dell'Informativa ai sensi del Decreto Legislativo 196/2003 e del Regolamento (UE) 2016/679 del Parlamento Europeo e del Consiglio del 27 Aprile 2016 (GDPR)",
-                'required' => true
-            ])
-            ->add('privacy_policy_two', CheckboxType::class, [
-                'label' => 'Autorizzo Traslochi Brandimarte SRL al trattamento dei miei dati personali per attività promozionali, pubblicitarie e di marketing dei propri prodotti e servizi',
                 'required' => true
             ])
             ->add('submit', SubmitType::class, [
@@ -412,17 +415,17 @@ class PreventiviController extends AbstractController {
                 $phone = $form_quote->get('telephone')->getData();
                 $email = $form_quote->get('name')->getData();
 
-                $start_address = $form_quote->get('start-address')->getData();
-                $start_city = $form_quote->get('start-city')->getData();
-                $start_cap = $form_quote->get('start-cap')->getData();
-                $start_floor = $form_quote->get('start-floor')->getData();
-                $start_lift = $form_quote->get('start-lift')->getData();
+                $start_address = $form_quote->get('start_address')->getData();
+                $start_city = $form_quote->get('start_city')->getData();
+                $start_cap = $form_quote->get('start_cap')->getData();
+                $start_floor = $form_quote->get('start_floor')->getData();
+                $start_lift = $form_quote->get('start_lift')->getData();
 
-                $end_address = $form_quote->get('end-address')->getData();
-                $end_city = $form_quote->get('end-city')->getData();
-                $end_cap = $form_quote->get('end-cap')->getData();
-                $end_floor = $form_quote->get('end-floor')->getData();
-                $end_lift = $form_quote->get('end-lift')->getData();
+                $end_address = $form_quote->get('end_address')->getData();
+                $end_city = $form_quote->get('end_city')->getData();
+                $end_cap = $form_quote->get('end_cap')->getData();
+                $end_floor = $form_quote->get('end_floor')->getData();
+                $end_lift = $form_quote->get('end_lift')->getData();
 
                 $deposit = $form_quote->get('deposit')->getData();
 
@@ -534,7 +537,7 @@ class PreventiviController extends AbstractController {
                 $external !== "" ? array_push($rooms, $external) : "";
 
                 $message = $form_quote->get('message')->getData();
-                strlen($message) < 5 ? $message = "nessuna" : "";
+                strlen($message) < 5 ? $message = "nessuna nota" : "";
 
                 /*
                 * Set email message
@@ -545,7 +548,7 @@ class PreventiviController extends AbstractController {
                 $email_message .= "Cognome: $surname \n";
                 $email_message .= "Telefono: $phone \n";
                 $email_message .= "Email: $email \n";
-                $email_message .= "\n\n\n";
+                $email_message .= "\n";
 
                 $email_message .= "Indirizzo di partenza: \n";
                 $email_message .= "$start_address \n";
@@ -553,7 +556,7 @@ class PreventiviController extends AbstractController {
                 $email_message .= "CAP: $start_cap \n";
                 $email_message .= "Piano: $start_floor \n";
                 $email_message .= "Ascensore: $start_lift \n";
-                $email_message .= "\n\n\n";
+                $email_message .= "\n";
 
                 $email_message .= "Indirizzo di arrivo: \n";
                 $email_message .= "$end_address \n";
@@ -561,10 +564,10 @@ class PreventiviController extends AbstractController {
                 $email_message .= "CAP: $end_cap \n";
                 $email_message .= "Piano: $end_floor \n";
                 $email_message .= "Ascensore: $end_lift \n";
-                $email_message .= "\n\n\n";
+                $email_message .= "\n";
 
                 $email_message .= "Necessità di deposito: $deposit \n";
-                $email_message .= "\n\n\n";
+                $email_message .= "\n";
 
                 $email_message .= "Camere selezionate: \n";
 
@@ -572,7 +575,7 @@ class PreventiviController extends AbstractController {
                     $email_message .= "- $room \n";
                 }
 
-                $email_message .= "\n\n\n";
+                $email_message .= "\n";
 
                 $email_message .= "Note del cliente: \n";
                 $email_message .= $message;

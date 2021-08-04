@@ -1,0 +1,365 @@
+.preventivo-main {
+    color: $blue_font;
+    
+    .preventivo-main-title {
+        margin: 2rem 2rem 2rem 2rem;
+        text-align: center;
+        border: 1px solid #ff0000;
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+    }
+
+    form {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "preventivo-main-form-title-generality preventivo-main-form-title-generality preventivo-main-form-title-generality preventivo-main-form-title-generality"
+        "preventivo-main-form-privacy_authorization preventivo-main-form-privacy_authorization preventivo-main-form-privacy_authorization preventivo-main-form-privacy_authorization"
+        "preventivo-main-form-name preventivo-main-form-surname preventivo-main-form-telephone preventivo-main-form-email"
+        "preventivo-main-form-start-title preventivo-main-form-start-title preventivo-main-form-start-title preventivo-main-form-start-title"
+        "preventivo-main-form-start-address preventivo-main-form-start-city preventivo-main-form-start-cap preventivo-main-form-start-floor"
+        "preventivo-main-form-start-lift preventivo-main-form-start-lift preventivo-main-form-start-lift preventivo-main-form-start-lift"
+        "preventivo-main-form-end-title preventivo-main-form-end-title preventivo-main-form-end-title preventivo-main-form-end-title"
+        "preventivo-main-form-end-address preventivo-main-form-end-city preventivo-main-form-end-cap preventivo-main-form-end-floor"
+        "preventivo-main-form-end-lift preventivo-main-form-end-lift preventivo-main-form-end-lift preventivo-main-form-end-lift"
+        "preventivo-main-form-deposit preventivo-main-form-deposit preventivo-main-form-deposit preventivo-main-form-deposit"
+        "preventivo-main-form-rooms-title preventivo-main-form-rooms-title preventivo-main-form-rooms-title preventivo-main-form-rooms-title"
+        "preventivo-main-form-rooms-entrance preventivo-main-form-rooms-corridor preventivo-main-form-rooms-kitchen preventivo-main-form-rooms-dinning_room"
+        "preventivo-main-form-rooms-lounge preventivo-main-form-rooms-bedroom preventivo-main-form-rooms-guest_room preventivo-main-form-rooms-kids_room"
+        "preventivo-main-form-rooms-kids_room_two preventivo-main-form-rooms-kids_room_three preventivo-main-form-rooms-other_room preventivo-main-form-rooms-bathroom"
+        "preventivo-main-form-rooms-bathroom_two preventivo-main-form-rooms-study preventivo-main-form-rooms-office preventivo-main-form-rooms-canteen"
+        "preventivo-main-form-rooms-terrace preventivo-main-form-rooms-terrace_two preventivo-main-form-rooms-terrace_three preventivo-main-form-rooms-balcony"
+        "preventivo-main-form-rooms-balcony_two preventivo-main-form-rooms-balcony_three preventivo-main-form-rooms-garage preventivo-main-form-rooms-box"
+        "preventivo-main-form-rooms-external preventivo-main-form-rooms-external preventivo-main-form-rooms-external preventivo-main-form-rooms-external"
+        "preventivo-main-form-message-title preventivo-main-form-message-title preventivo-main-form-message-title preventivo-main-form-message-title"
+        "preventivo-main-form-message preventivo-main-form-message preventivo-main-form-message preventivo-main-form-message"
+        "preventivo-main-form-privacy-title preventivo-main-form-privacy-title preventivo-main-form-privacy-title preventivo-main-form-privacy-title"
+        "preventivo-main-form-privacy preventivo-main-form-privacy preventivo-main-form-privacy preventivo-main-form-privacy"
+        "preventivo-main-form-submit preventivo-main-form-submit preventivo-main-form-submit preventivo-main-form-submit";
+
+        // Genera rules for labels and inputs
+
+        label {
+            margin: .5rem;
+            font-size: 1.5rem;
+        }
+
+        input[type=text],
+        input[type=email] {
+            display: block;
+            margin: .5rem;
+            font-size: 1.5rem;
+        }
+
+        /*
+        * START
+        * input checkbox styled by CSS TRICKS GUIDE
+        * https://css-tricks.com/the-checkbox-hack/
+        */
+        
+        /* Base for label styling */
+        [type="checkbox"]:not(:checked),
+        [type="checkbox"]:checked {
+            position: absolute;
+            left: 0;
+            opacity: 0.01;
+        }
+        [type="checkbox"]:not(:checked) + label,
+        [type="checkbox"]:checked + label {
+            position: relative;
+            padding-left: 2.3em;
+            font-size: 1.05em;
+            line-height: 1.7;
+            cursor: pointer;
+        }
+
+        /* checkbox aspect */
+        [type="checkbox"]:not(:checked) + label:before,
+        [type="checkbox"]:checked + label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.4em;
+            height: 1.4em;
+            border: 1px solid #aaa;
+            background: #FFF;
+            border-radius: .2em;
+            box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 rgba(0, 255, 42, 0.2);
+            -webkit-transition: all .275s;
+                transition: all .275s;
+        }
+
+        /* checked mark aspect */
+        [type="checkbox"]:not(:checked) + label:after,
+        [type="checkbox"]:checked + label:after {
+            content: '✕';
+            position: absolute;
+            top: .525em;
+            left: .18em;
+            font-size: 1.375em;
+            color: $green_font;
+            line-height: 0;
+            -webkit-transition: all .2s;
+                transition: all .2s;
+        }
+
+        /* checked mark aspect changes */
+        [type="checkbox"]:not(:checked) + label:after {
+            opacity: 0;
+            -webkit-transform: scale(0) rotate(45deg);
+                transform: scale(0) rotate(45deg);
+        }
+
+        [type="checkbox"]:checked + label:after {
+            opacity: 1;
+            -webkit-transform: scale(1) rotate(0);
+                transform: scale(1) rotate(0);
+        }
+
+        /* Accessibility */
+        [type="checkbox"]:checked:focus + label:before,
+        [type="checkbox"]:not(:checked):focus + label:before {
+            box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 6px rgba(81, 255, 0, 0.2);
+        }
+
+        /*
+        * input checkbox styled by CSS TRICKS GUIDE
+        * https://css-tricks.com/the-checkbox-hack/
+        * END
+        */
+        
+
+        .preventivo-main-form-title-generality {
+            grid-area: preventivo-main-form-title-generality;
+            margin: 1rem;
+
+            h4 {
+                font-size: 2rem;
+            }
+
+        }
+
+        .preventivo-main-form-privacy_authorization {
+            grid-area: preventivo-main-form-privacy_authorization;
+            margin: 1rem;
+
+            p {
+                font-size: 1.5rem;
+            }
+
+        }
+
+        .preventivo-main-form-name {
+            grid-area: preventivo-main-form-name;
+        }
+
+        .preventivo-main-form-surname {
+            grid-area: preventivo-main-form-surname;
+        }
+
+        .preventivo-main-form-telephone {
+            grid-area: preventivo-main-form-telephone;
+        }
+
+        .preventivo-main-form-email {
+            grid-area: preventivo-main-form-email;
+        }
+
+        .preventivo-main-form-start-title {
+            grid-area: preventivo-main-form-start-title;
+        }
+
+        .preventivo-main-form-start-address {
+            grid-area: preventivo-main-form-start-address;
+        }
+
+        .preventivo-main-form-start-city {
+            grid-area: preventivo-main-form-start-city;
+        }
+
+        .preventivo-main-form-start-cap {
+            grid-area: preventivo-main-form-start-cap;
+        }
+
+        .preventivo-main-form-start-floor {
+            grid-area: preventivo-main-form-start-floor;
+        }
+
+        .preventivo-main-form-start-lift {
+            grid-area: preventivo-main-form-start-lift;
+        }
+
+        .preventivo-main-form-end-title {
+            grid-area: preventivo-main-form-end-title;
+        }
+
+        .preventivo-main-form-end-address {
+            grid-area: preventivo-main-form-end-address;
+        }
+
+        .preventivo-main-form-end-city {
+            grid-area: preventivo-main-form-end-city;
+        }
+
+        .preventivo-main-form-end-cap {
+            grid-area: preventivo-main-form-end-cap;
+        }
+
+        .preventivo-main-form-end-floor {
+            grid-area: preventivo-main-form-end-floor;
+        }
+
+        .preventivo-main-form-end-lift {
+            grid-area: preventivo-main-form-end-lift;
+        }
+
+        .preventivo-main-form-deposit {
+            grid-area: preventivo-main-form-deposit;
+        }
+
+        .preventivo-main-form-rooms-title {
+            grid-area: preventivo-main-form-rooms-title;
+        }
+
+        .preventivo-main-form-rooms-entrance {
+            grid-area: preventivo-main-form-rooms-entrance;
+        }
+
+        .preventivo-main-form-rooms-corridor {
+            grid-area: preventivo-main-form-rooms-corridor;
+        }
+
+        .preventivo-main-form-rooms-kitchen {
+            grid-area: preventivo-main-form-rooms-kitchen;
+        }
+
+        .preventivo-main-form-rooms-dinning_room {
+            grid-area: preventivo-main-form-rooms-dinning_room;
+        }
+
+        .preventivo-main-form-rooms-dinning_room {
+            grid-area: preventivo-main-form-rooms-dinning_room;
+        }
+
+        .preventivo-main-form-rooms-lounge {
+            grid-area: preventivo-main-form-rooms-lounge;
+        }
+
+        .preventivo-main-form-rooms-bedroom {
+            grid-area: preventivo-main-form-rooms-bedroom;
+        }
+
+        .preventivo-main-form-rooms-guest_room {
+            grid-area: preventivo-main-form-rooms-guest_room;
+        }
+
+        .preventivo-main-form-rooms-kids_room {
+            grid-area: preventivo-main-form-rooms-kids_room;
+        }
+
+        .preventivo-main-form-rooms-kids_room_two {
+            grid-area: preventivo-main-form-rooms-kids_room_two;
+        }
+
+        .preventivo-main-form-rooms-kids_room_three {
+            grid-area: preventivo-main-form-rooms-kids_room_three;
+        }
+
+        .preventivo-main-form-rooms-other_room {
+            grid-area: preventivo-main-form-rooms-other_room;
+        }
+
+        .preventivo-main-form-rooms-bathroom {
+            grid-area: preventivo-main-form-rooms-bathroom;
+        }
+
+        .preventivo-main-form-rooms-bathroom_two {
+            grid-area: preventivo-main-form-rooms-bathroom_two;
+        }
+
+        .preventivo-main-form-rooms-study {
+            grid-area: preventivo-main-form-rooms-study;
+        }
+
+        .preventivo-main-form-rooms-office {
+            grid-area: preventivo-main-form-rooms-office;
+        }
+
+        .preventivo-main-form-rooms-canteen {
+            grid-area: preventivo-main-form-rooms-canteen;
+        }
+
+        .preventivo-main-form-rooms-terrace {
+            grid-area: preventivo-main-form-rooms-terrace;
+        }
+
+        .preventivo-main-form-rooms-terrace_two {
+            grid-area: preventivo-main-form-rooms-terrace_two;
+        }
+
+        .preventivo-main-form-rooms-terrace_three {
+            grid-area: preventivo-main-form-rooms-terrace_three;
+        }
+
+        .preventivo-main-form-rooms-balcony {
+            grid-area: preventivo-main-form-rooms-balcony;
+        }
+
+        .preventivo-main-form-rooms-balcony_two {
+            grid-area: preventivo-main-form-rooms-balcony_two;
+        }
+
+        .preventivo-main-form-rooms-balcony_three {
+            grid-area: preventivo-main-form-rooms-balcony_three;
+        }
+
+        .preventivo-main-form-rooms-garage {
+            grid-area: preventivo-main-form-rooms-garage;
+        }
+
+        .preventivo-main-form-rooms-box {
+            grid-area: preventivo-main-form-rooms-box;
+        }
+
+        .preventivo-main-form-rooms-external {
+            grid-area: preventivo-main-form-rooms-external;
+        }
+
+        .preventivo-main-form-message-title {
+            grid-area: preventivo-main-form-message-title;
+        }
+
+        .preventivo-main-form-message {
+            grid-area: preventivo-main-form-message;
+        }
+
+        .preventivo-main-form-privacy-title {
+            grid-area: preventivo-main-form-privacy-title;
+        }
+
+        .preventivo-main-form-privacy {
+            grid-area: preventivo-main-form-privacy;
+        }
+
+        .preventivo-main-form-submit {
+            grid-area: preventivo-main-form-submit;
+        }
+
+        border: 1px solid #ff0000;
+
+    }
+
+}

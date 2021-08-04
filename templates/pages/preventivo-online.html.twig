@@ -12,8 +12,205 @@ Preventivo online
 
 {% block body %}
 <main class="preventivo-main">
-    {{ form_start(form_quote) }}
-
-    {{ form_end(form_quote) }}
+    <section class="preventivo-main-title">
+        <h2>Preventivo gratuito online</h2>
+        <p>
+            Calcola ora il tuo preventivo online gratuitamente e senza impegno<br>
+            Uno strumento utile che Traslochi Brandimarte mette a tua disposizione<br>
+            Ti aiuterà a capire i costi per il tuo prossimo trasloco<br>
+            Riceverai il tuo preventivo personalizzato entro e non oltre le 24
+            via email
+        </p>
+    </section>
+    <section class="preventivo-main-form">
+        {{ form_start(form_quote) }}
+            <section class="preventivo-main-form-title-generality">
+                <h4>Dati del cliente</h4>
+            </section>
+            <section class="preventivo-main-form-privacy_authorization">
+                <p>
+                    I tuoi dati personali verrano usati SOLO ed ESCLUSIVAMENTE da 
+                    Traslochi Brandimarte e il SUO personale per la creazione del preventivo
+                </p>
+                {{ form_widget(form_quote.privacy_authorization) }}
+                {{ form_label(form_quote.privacy_authorization) }}
+            </section>
+            <section class="preventivo-main-form-name">
+                {{ form_row(form_quote.name) }}
+            </section>
+            <section class="preventivo-main-form-surname">
+                {{ form_row(form_quote.surname) }}
+            </section>
+            <section class="preventivo-main-form-telephone">
+                {{ form_row(form_quote.telephone) }}
+            </section>
+            <section class="preventivo-main-form-email">
+                {{ form_row(form_quote.email) }}
+            </section>
+            <section class="preventivo-main-form-start-title">
+                <h4>Indirizzo di partenza</h4>
+            </section>
+            <section class="preventivo-main-form-start-address">
+                {{ form_row(form_quote.start_address) }}
+            </section>
+            <section class="preventivo-main-form-start-city">
+                {{ form_row(form_quote.start_city) }}
+            </section>
+            <section class="preventivo-main-form-start-cap">
+                {{ form_row(form_quote.start_cap) }}
+            </section>
+            <section class="preventivo-main-form-start-floor">
+                {{ form_row(form_quote.start_floor) }}
+            </section>
+            <section class="preventivo-main-form-start-lift">
+                {{ form_row(form_quote.start_lift) }}
+            </section>
+            <section class="preventivo-main-form-end-title">
+                <h4>Indirizzo di destinazione</h4>
+            </section>
+            <section class="preventivo-main-form-end-address">
+                {{ form_row(form_quote.end_address) }}
+            </section>
+            <section class="preventivo-main-form-end-city">
+                {{ form_row(form_quote.end_city) }}
+            </section>
+            <section class="preventivo-main-form-end-cap">
+                {{ form_row(form_quote.end_cap) }}
+            </section>
+            <section class="preventivo-main-form-end-floor">
+                {{ form_row(form_quote.end_floor) }}
+            </section>
+            <section class="preventivo-main-form-end-lift">
+                {{ form_row(form_quote.end_lift) }}
+            </section>
+            <section class="preventivo-main-form-deposit">
+                {{ form_row(form_quote.deposit) }}
+            </section>
+            <section class="preventivo-main-form-rooms-title">
+                <h4>Tipologia di trasloco</h4>
+            </section>
+            <section class="preventivo-main-form-rooms-entrance preventivo-main-form-check-container">
+                {{ form_widget(form_quote.entrance) }}
+                {{ form_label(form_quote.entrance) }}
+            </section>
+            <section class="preventivo-main-form-rooms-corridor">
+                {{ form_widget(form_quote.corridor) }}
+                {{ form_label(form_quote.corridor) }}
+            </section>
+            <section class="preventivo-main-form-rooms-kitchen">
+                {{ form_widget(form_quote.kitchen) }}
+                {{ form_label(form_quote.kitchen) }}
+            </section>
+            <section class="preventivo-main-form-rooms-dinning_room">
+                {{ form_widget(form_quote.dinning_room) }}
+                {{ form_label(form_quote.dinning_room) }}
+            </section>
+            <section class="preventivo-main-form-rooms-lounge">
+                {{ form_widget(form_quote.lounge) }}
+                {{ form_label(form_quote.lounge) }}
+            </section>
+            <section class="preventivo-main-form-rooms-bedroom">
+                {{ form_widget(form_quote.bedroom) }}
+                {{ form_label(form_quote.bedroom) }}
+            </section>
+            <section class="preventivo-main-form-rooms-guest_room">
+                {{ form_widget(form_quote.guest_room) }}
+                {{ form_label(form_quote.guest_room) }}
+            </section>
+            <section class="preventivo-main-form-rooms-kids_room">
+                {{ form_widget(form_quote.kids_room) }}
+                {{ form_label(form_quote.kids_room) }}
+            </section>
+            <section class="preventivo-main-form-rooms-kids_room_two">
+                {{ form_widget(form_quote.kids_room_two) }}
+                {{ form_label(form_quote.kids_room_two) }}
+            </section>
+            <section class="preventivo-main-form-rooms-kids_room_three">
+                {{ form_widget(form_quote.kids_room_three) }}
+                {{ form_label(form_quote.kids_room_three) }}
+            </section>
+            <section class="preventivo-main-form-rooms-other_room">
+                {{ form_widget(form_quote.other_room) }}
+                {{ form_label(form_quote.other_room) }}
+            </section>
+            <section class="preventivo-main-form-rooms-bathroom">
+                {{ form_widget(form_quote.bathroom) }}
+                {{ form_label(form_quote.bathroom) }}
+            </section>
+            <section class="preventivo-main-form-rooms-bathroom_two">
+                {{ form_widget(form_quote.bathroom_two) }}
+                {{ form_label(form_quote.bathroom_two) }}
+            </section>
+            <section class="preventivo-main-form-rooms-study">
+                {{ form_widget(form_quote.study) }}
+                {{ form_label(form_quote.study) }}
+            </section>
+            <section class="preventivo-main-form-rooms-office">
+                {{ form_widget(form_quote.office) }}
+                {{ form_label(form_quote.office) }}
+            </section>
+            <section class="preventivo-main-form-rooms-canteen">
+                {{ form_widget(form_quote.canteen) }}
+                {{ form_label(form_quote.canteen) }}
+            </section>
+            <section class="preventivo-main-form-rooms-terrace">
+                {{ form_widget(form_quote.terrace) }}
+                {{ form_label(form_quote.terrace) }}
+            </section>
+            <section class="preventivo-main-form-rooms-terrace_two">
+                {{ form_widget(form_quote.terrace_two) }}
+                {{ form_label(form_quote.terrace_two) }}
+            </section>
+            <section class="preventivo-main-form-rooms-terrace_three">
+                {{ form_widget(form_quote.terrace_three) }}
+                {{ form_label(form_quote.terrace_three) }}
+            </section>
+            <section class="preventivo-main-form-rooms-balcony">
+                {{ form_widget(form_quote.balcony) }}
+                {{ form_label(form_quote.balcony) }}
+            </section>
+            <section class="preventivo-main-form-rooms-balcony_two">
+                {{ form_widget(form_quote.balcony_two) }}
+                {{ form_label(form_quote.balcony_two) }}
+            </section>
+            <section class="preventivo-main-form-rooms-balcony_three">
+                {{ form_widget(form_quote.balcony_three) }}
+                {{ form_label(form_quote.balcony_three) }}
+            </section>
+            <section class="preventivo-main-form-rooms-garage">
+                {{ form_widget(form_quote.garage) }}
+                {{ form_label(form_quote.garage) }}
+            </section>
+            <section class="preventivo-main-form-rooms-box">
+                {{ form_widget(form_quote.box) }}
+                {{ form_label(form_quote.box) }}
+            </section>
+            <section class="preventivo-main-form-rooms-external">
+                {{ form_widget(form_quote.external) }}
+                {{ form_label(form_quote.external) }}
+            </section>
+            <section class="preventivo-main-form-message-title">
+                <h4>Informazioni aggiuntive</h4>
+            </section>
+            <section class="preventivo-main-form-message">
+                {{ form_row(form_quote.message) }}
+            </section>
+            <section class="preventivo-main-form-privacy-title">
+                <h4>Privacy Policy</h4>
+                <p>
+                    Traslochi Brandimarte utilizzaerà i tuoi dati solo ed esclusivamente per il 
+                    fornirti il preventivo online richiesto.
+                    I tuoi dati verranno utilizzati SOLO ed ESCLUSIVAMENTE dal personale di Traslochi Brandimarte
+                    e NON verranno ceduti o condivisi per nessun motivo con terze compagnie
+                </p>
+            </section>
+            <section class="preventivo-main-form-privacy">
+                {{ form_row(form_quote.privacy_policy) }}
+            </section>
+            <section class="preventivo-main-form-submit">
+                {{ form_row(form_quote.submit) }}
+            </section>
+        {{ form_end(form_quote) }}
+    </section>
 </main>
 {% endblock %}
