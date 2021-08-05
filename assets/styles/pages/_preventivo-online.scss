@@ -2,13 +2,22 @@
     color: $blue_font;
     
     .preventivo-main-title {
-        margin: 2rem 2rem 2rem 2rem;
+        width: 80%;
+        margin: 4rem auto 4rem auto;
         text-align: center;
-        border: 1px solid #ff0000;
+
+        background-image: linear-gradient(
+            to right bottom,
+            rgba(247, 247, 247, 0.8),
+            rgba(210, 224, 241, 0.8)
+        );
+        background-size: cover;
+        background-position: top;
+        position: relative;
 
         h2 {
             font-size: 3rem;
-            margin-bottom: 1rem;
+            margin: 2rem auto 1rem auto;
         }
 
         p {
@@ -20,8 +29,7 @@
     }
 
     form {
-        width: 90%;
-        margin: auto;
+        margin: 2rem 2rem 5rem 2rem;
         display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
@@ -49,18 +57,65 @@
         "preventivo-main-form-privacy preventivo-main-form-privacy preventivo-main-form-privacy preventivo-main-form-privacy"
         "preventivo-main-form-submit preventivo-main-form-submit preventivo-main-form-submit preventivo-main-form-submit";
 
-        // Genera rules for labels and inputs
+        background-image: linear-gradient(
+            to right bottom,
+            rgba(247, 247, 247, 0.8),
+            rgba(210, 241, 217, 0.8)
+        );
+        background-size: cover;
+        background-position: top;
+        position: relative;
+
+        // Genera rules for labels, inputs and h4 title
 
         label {
-            margin: .5rem;
+            margin: .5rem .5rem .5rem .5rem;
             font-size: 1.5rem;
         }
 
         input[type=text],
         input[type=email] {
             display: block;
-            margin: .5rem;
+            margin: .5rem .5rem 2rem .5rem;
             font-size: 1.5rem;
+            padding: .5rem;
+        }
+
+        select {
+            margin: .5rem .5rem 2rem .5rem;
+        }
+
+        label,
+        textarea {
+            display: block;
+        }
+
+        textarea {
+            width: 90%;
+            height: auto;
+            min-height: 30vh;
+            margin: 1rem .5rem 2rem .5rem;
+            font-size: 1.2rem;
+            padding: 1rem;
+        }
+
+        h4 {
+            font-size: 2rem;
+            margin: 2rem 0rem 2rem .5rem;
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: .5rem;
+        }
+
+        hr {
+            border: 1px solid #fff;
+        }
+
+        button {
+            margin: 2rem 0rem 2rem .5rem;
         }
 
         /*
@@ -80,7 +135,7 @@
         [type="checkbox"]:checked + label {
             position: relative;
             padding-left: 2.3em;
-            font-size: 1.05em;
+            font-size: 1.2rem;
             line-height: 1.7;
             cursor: pointer;
         }
@@ -144,22 +199,11 @@
 
         .preventivo-main-form-title-generality {
             grid-area: preventivo-main-form-title-generality;
-            margin: 1rem;
-
-            h4 {
-                font-size: 2rem;
-            }
 
         }
 
         .preventivo-main-form-privacy_authorization {
             grid-area: preventivo-main-form-privacy_authorization;
-            margin: 1rem;
-
-            p {
-                font-size: 1.5rem;
-            }
-
         }
 
         .preventivo-main-form-name {
@@ -356,9 +400,187 @@
 
         .preventivo-main-form-submit {
             grid-area: preventivo-main-form-submit;
+            @include btn-form;
         }
 
-        border: 1px solid #ff0000;
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 1400px
+*/
+@media (max-width: 1400px) {
+
+    .preventivo-main {
+
+        form {
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+            "preventivo-main-form-title-generality preventivo-main-form-title-generality" 
+            "preventivo-main-form-privacy_authorization preventivo-main-form-privacy_authorization"
+            "preventivo-main-form-name preventivo-main-form-surname"
+            "preventivo-main-form-telephone preventivo-main-form-email"
+            "preventivo-main-form-start-title preventivo-main-form-start-title"
+            "preventivo-main-form-start-address preventivo-main-form-start-city"
+            "preventivo-main-form-start-cap preventivo-main-form-start-floor"
+            "preventivo-main-form-start-lift preventivo-main-form-start-lift"
+            "preventivo-main-form-end-title preventivo-main-form-end-title"
+            "preventivo-main-form-end-address preventivo-main-form-end-city"
+            "preventivo-main-form-end-cap preventivo-main-form-end-floor"
+            "preventivo-main-form-end-lift preventivo-main-form-end-lift"
+            "preventivo-main-form-deposit preventivo-main-form-deposit"
+            "preventivo-main-form-rooms-title preventivo-main-form-rooms-title"
+            "preventivo-main-form-rooms-entrance preventivo-main-form-rooms-corridor"
+            "preventivo-main-form-rooms-kitchen preventivo-main-form-rooms-dinning_room"
+            "preventivo-main-form-rooms-lounge preventivo-main-form-rooms-bedroom"
+            "preventivo-main-form-rooms-guest_room preventivo-main-form-rooms-kids_room"
+            "preventivo-main-form-rooms-kids_room_two preventivo-main-form-rooms-kids_room_three"
+            "preventivo-main-form-rooms-other_room preventivo-main-form-rooms-bathroom"
+            "preventivo-main-form-rooms-bathroom_two preventivo-main-form-rooms-study"
+            "preventivo-main-form-rooms-office preventivo-main-form-rooms-canteen"
+            "preventivo-main-form-rooms-terrace preventivo-main-form-rooms-terrace_two"
+            "preventivo-main-form-rooms-terrace_three preventivo-main-form-rooms-balcony"
+            "preventivo-main-form-rooms-balcony_two preventivo-main-form-rooms-balcony_three"
+            "preventivo-main-form-rooms-garage preventivo-main-form-rooms-box"
+            "preventivo-main-form-rooms-external preventivo-main-form-rooms-external"
+            "preventivo-main-form-message-title preventivo-main-form-message-title"
+            "preventivo-main-form-message preventivo-main-form-message"
+            "preventivo-main-form-privacy-title preventivo-main-form-privacy-title"
+            "preventivo-main-form-privacy preventivo-main-form-privacy"
+            "preventivo-main-form-submit preventivo-main-form-submit";
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 767px
+*/
+@media (max-width: 767px) {
+
+    .preventivo-main {
+
+        form {
+            grid-template-rows: 1fr;
+            grid-template-areas:
+            "preventivo-main-form-title-generality" 
+            "preventivo-main-form-privacy_authorization"
+            "preventivo-main-form-name"
+            "preventivo-main-form-surname"
+            "preventivo-main-form-telephone"
+            "preventivo-main-form-email"
+            "preventivo-main-form-start-title"
+            "preventivo-main-form-start-address"
+            "preventivo-main-form-start-city"
+            "preventivo-main-form-start-cap"
+            "preventivo-main-form-start-floor"
+            "preventivo-main-form-start-lift"
+            "preventivo-main-form-end-title"
+            "preventivo-main-form-end-address"
+            "preventivo-main-form-end-city"
+            "preventivo-main-form-end-cap"
+            "preventivo-main-form-end-floor"
+            "preventivo-main-form-end-lift"
+            "preventivo-main-form-deposit"
+            "preventivo-main-form-deposit"
+            "preventivo-main-form-rooms-title"
+            "preventivo-main-form-rooms-entrance"
+            "preventivo-main-form-rooms-corridor"
+            "preventivo-main-form-rooms-kitchen"
+            "preventivo-main-form-rooms-dinning_room"
+            "preventivo-main-form-rooms-lounge"
+            "preventivo-main-form-rooms-bedroom"
+            "preventivo-main-form-rooms-guest_room"
+            "preventivo-main-form-rooms-kids_room"
+            "preventivo-main-form-rooms-kids_room_two"
+            "preventivo-main-form-rooms-kids_room_three"
+            "preventivo-main-form-rooms-other_room"
+            "preventivo-main-form-rooms-bathroom"
+            "preventivo-main-form-rooms-bathroom_two"
+            "preventivo-main-form-rooms-study"
+            "preventivo-main-form-rooms-office"
+            "preventivo-main-form-rooms-canteen"
+            "preventivo-main-form-rooms-terrace"
+            "preventivo-main-form-rooms-terrace_two"
+            "preventivo-main-form-rooms-terrace_three"
+            "preventivo-main-form-rooms-balcony"
+            "preventivo-main-form-rooms-balcony_two"
+            "preventivo-main-form-rooms-balcony_three"
+            "preventivo-main-form-rooms-garage"
+            "preventivo-main-form-rooms-box"
+            "preventivo-main-form-rooms-external"
+            "preventivo-main-form-message-title"
+            "preventivo-main-form-message"
+            "preventivo-main-form-privacy-title"
+            "preventivo-main-form-privacy"
+            "preventivo-main-form-submit";
+
+            .form-grid-container {
+                margin: auto;
+            }
+
+            .preventivo-main-form-message {
+
+                width: 100%;
+
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* Media Queries
+* max-width: 480px
+*/
+@media (max-width: 480px) {
+
+    .preventivo-main {
+
+        .preventivo-main-title {
+            width: 90%;
+        }
+
+        form {
+            margin: 2rem .5rem 5rem .5rem;
+
+            label {
+                font-size: 1.2rem;
+            }
+
+            input[type=text],
+            input[type=email] {
+                font-size: 1.2rem;
+            }
+
+            h4 {
+                font-size: 1.5rem;
+                margin: 2rem .5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .preventivo-main-form-message {
+                width: 90%;
+                
+                div {
+
+                    textarea {
+                        margin: auto;
+                    }
+                }
+            }
+
+        }
 
     }
 

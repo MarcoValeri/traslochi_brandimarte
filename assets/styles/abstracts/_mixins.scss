@@ -35,6 +35,30 @@
 
 }
 
+/*
+* Create a mixim the
+* style the standard btn
+* of the forms
+*/
+@mixin btn-form {
+    
+    button {
+        font-size: 1.2rem;
+        padding: .5rem;
+        border-radius: 5px;
+        background-color: #fff;
+        border: 1px solid $blue_font;
+
+        &:hover {
+            color: $green_font;
+            border: 1px solid $green_font;
+            box-shadow: 5px 10px 8px #888888;
+        }
+
+    }
+
+}
+
 
 /*
 * Create a mixim that

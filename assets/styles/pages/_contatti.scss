@@ -93,20 +93,7 @@
                 grid-area: contatti-main-form-submit;
                 margin: .5rem;
 
-                button {
-                    font-size: 1.2rem;
-                    padding: .5rem;
-                    border-radius: 5px;
-                    background-color: #fff;
-                    border: 1px solid $blue_font;
-
-                    &:hover {
-                        color: $green_font;
-                        border: 1px solid $green_font;
-                        box-shadow: 5px 10px 8px #888888;
-                    }
-
-                }
+                @include btn-form;
 
             }
 
@@ -157,8 +144,3 @@
     }
 
 }
-
-/*
-* Media Queries
-* max-width: 767px
-*/

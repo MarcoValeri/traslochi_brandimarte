@@ -378,10 +378,10 @@ class PreventiviController extends AbstractController {
             ])
             ->add('message', TextareaType::class,
                 [
-                'label' => 'Informazioni aggiuntive',
+                'label' => 'Note del cliente',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Un ultimo sforzo: più dettagliate saranno le informazioni che ci darai, più preciso sarà il preventivo che ti forniremo'
+                    'placeholder' => 'Un ultimo sforzo: più dettagliate saranno le informazioni che ci fornisci, più preciso sarà il tuo preventivo personalizzato gratuito'
                 ],
                 'constraints' =>
                 [
@@ -398,7 +398,7 @@ class PreventiviController extends AbstractController {
                 'required' => true
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Invia'
+                'label' => 'Invia il tuo preventivo'
             ])
             ->getForm();
             

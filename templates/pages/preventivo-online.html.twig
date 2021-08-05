@@ -24,10 +24,10 @@ Preventivo online
     </section>
     <section class="preventivo-main-form">
         {{ form_start(form_quote) }}
-            <section class="preventivo-main-form-title-generality">
+            <section class="preventivo-main-form-title-generality form-grid-container">
                 <h4>Dati del cliente</h4>
             </section>
-            <section class="preventivo-main-form-privacy_authorization">
+            <section class="preventivo-main-form-privacy_authorization form-grid-container">
                 <p>
                     I tuoi dati personali verrano usati SOLO ed ESCLUSIVAMENTE da 
                     Traslochi Brandimarte e il SUO personale per la creazione del preventivo
@@ -35,61 +35,64 @@ Preventivo online
                 {{ form_widget(form_quote.privacy_authorization) }}
                 {{ form_label(form_quote.privacy_authorization) }}
             </section>
-            <section class="preventivo-main-form-name">
+            <section class="preventivo-main-form-name form-grid-container">
                 {{ form_row(form_quote.name) }}
             </section>
-            <section class="preventivo-main-form-surname">
+            <section class="preventivo-main-form-surname form-grid-container">
                 {{ form_row(form_quote.surname) }}
             </section>
-            <section class="preventivo-main-form-telephone">
+            <section class="preventivo-main-form-telephone form-grid-container">
                 {{ form_row(form_quote.telephone) }}
             </section>
-            <section class="preventivo-main-form-email">
+            <section class="preventivo-main-form-email form-grid-container">
                 {{ form_row(form_quote.email) }}
             </section>
-            <section class="preventivo-main-form-start-title">
+            <section class="preventivo-main-form-start-title form-grid-container">
+                <hr>
                 <h4>Indirizzo di partenza</h4>
             </section>
-            <section class="preventivo-main-form-start-address">
+            <section class="preventivo-main-form-start-address form-grid-container">
                 {{ form_row(form_quote.start_address) }}
             </section>
-            <section class="preventivo-main-form-start-city">
+            <section class="preventivo-main-form-start-city form-grid-container">
                 {{ form_row(form_quote.start_city) }}
             </section>
-            <section class="preventivo-main-form-start-cap">
+            <section class="preventivo-main-form-start-cap form-grid-container">
                 {{ form_row(form_quote.start_cap) }}
             </section>
-            <section class="preventivo-main-form-start-floor">
+            <section class="preventivo-main-form-start-floor form-grid-container">
                 {{ form_row(form_quote.start_floor) }}
             </section>
-            <section class="preventivo-main-form-start-lift">
+            <section class="preventivo-main-form-start-lift form-grid-container">
                 {{ form_row(form_quote.start_lift) }}
             </section>
-            <section class="preventivo-main-form-end-title">
+            <section class="preventivo-main-form-end-title form-grid-container">
+                <hr>
                 <h4>Indirizzo di destinazione</h4>
             </section>
-            <section class="preventivo-main-form-end-address">
+            <section class="preventivo-main-form-end-address form-grid-container">
                 {{ form_row(form_quote.end_address) }}
             </section>
-            <section class="preventivo-main-form-end-city">
+            <section class="preventivo-main-form-end-city form-grid-container">
                 {{ form_row(form_quote.end_city) }}
             </section>
-            <section class="preventivo-main-form-end-cap">
+            <section class="preventivo-main-form-end-cap form-grid-container">
                 {{ form_row(form_quote.end_cap) }}
             </section>
-            <section class="preventivo-main-form-end-floor">
+            <section class="preventivo-main-form-end-floor form-grid-container">
                 {{ form_row(form_quote.end_floor) }}
             </section>
-            <section class="preventivo-main-form-end-lift">
+            <section class="preventivo-main-form-end-lift form-grid-container">
                 {{ form_row(form_quote.end_lift) }}
             </section>
-            <section class="preventivo-main-form-deposit">
+            <section class="preventivo-main-form-deposit form-grid-container">
                 {{ form_row(form_quote.deposit) }}
             </section>
-            <section class="preventivo-main-form-rooms-title">
+            <section class="preventivo-main-form-rooms-title form-grid-container">
+                <hr>
                 <h4>Tipologia di trasloco</h4>
             </section>
-            <section class="preventivo-main-form-rooms-entrance preventivo-main-form-check-container">
+            <section class="preventivo-main-form-rooms-entrance">
                 {{ form_widget(form_quote.entrance) }}
                 {{ form_label(form_quote.entrance) }}
             </section>
@@ -189,13 +192,14 @@ Preventivo online
                 {{ form_widget(form_quote.external) }}
                 {{ form_label(form_quote.external) }}
             </section>
-            <section class="preventivo-main-form-message-title">
+            <section class="preventivo-main-form-message-title form-grid-container">
                 <h4>Informazioni aggiuntive</h4>
             </section>
-            <section class="preventivo-main-form-message">
+            <section class="preventivo-main-form-message form-grid-container">
                 {{ form_row(form_quote.message) }}
             </section>
-            <section class="preventivo-main-form-privacy-title">
+            <section class="preventivo-main-form-privacy-title form-grid-container">
+                <hr>
                 <h4>Privacy Policy</h4>
                 <p>
                     Traslochi Brandimarte utilizzaerà i tuoi dati solo ed esclusivamente per il 
@@ -204,10 +208,11 @@ Preventivo online
                     e NON verranno ceduti o condivisi per nessun motivo con terze compagnie
                 </p>
             </section>
-            <section class="preventivo-main-form-privacy">
-                {{ form_row(form_quote.privacy_policy) }}
+            <section class="preventivo-main-form-privacy form-grid-container">
+                {{ form_widget(form_quote.privacy_policy) }}
+                {{ form_label(form_quote.privacy_policy) }}
             </section>
-            <section class="preventivo-main-form-submit">
+            <section class="preventivo-main-form-submit form-grid-container">
                 {{ form_row(form_quote.submit) }}
             </section>
         {{ form_end(form_quote) }}
