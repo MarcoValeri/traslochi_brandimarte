@@ -32,6 +32,7 @@ class ContattiController extends AbstractController {
         * the request of the user
         */
         $form_contact = $this->createFormBuilder([])
+            ->setAction($this->generateUrl('app_contatti_conferma'))
             ->add('name', TextType::class, 
                 [
                     'label' => 'Nome *',
@@ -121,11 +122,13 @@ class ContattiController extends AbstractController {
             $message = $form_contact->get('message')->getData();
 
             $email_message = "Contatti Traslochi Brandimarte \n";
+            $email_message .= "\n";
             $email_message .= "Messaggio inviato da: \n";
             $email_message .= "Nome: $name \n";
             $email_message .= "Cognome: $surname \n";
             $email_message .= "Email: $email \n";
             $email_message .= "Messaggio: \n";
+            $email_message .= "\n";
             $email_message .= $message;
 
             $email_message = wordwrap($email_message, 70);
@@ -137,6 +140,14 @@ class ContattiController extends AbstractController {
         return $this->render('pages/contatti.html.twig', [
             'form_contact' => $form_contact->createView()
         ]);
+    }
+
+
+    /**
+     * @Route("/contatti-conferma", name="app_contatti_conferma")
+     */
+    public function contatti_conferma() {
+        return $this->render('pages/contatti-conferma.html.twig');
     }
 
 }

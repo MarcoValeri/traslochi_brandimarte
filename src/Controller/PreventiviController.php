@@ -41,8 +41,9 @@ class PreventiviController extends AbstractController {
         * email with the data of the user
         */
         $form_quote = $this->createFormBuilder([])
+            ->setAction($this->generateUrl('app_preventivo_online_conferma'))
             ->add('privacy_authorization', CheckboxType::class, [
-                'label' => 'Autorizzo Traslochi Brandimarte SRL al trattamento dei miei dati personali per attività promozionali, pubblicitarie e di marketing dei propri prodotti e servizi',
+                'label' => 'Autorizzo Traslochi Brandimarte Srl al trattamento dei miei dati personali per attività promozionali, pubblicitarie e di marketing dei propri prodotti e servizi',
                 'required' => true
             ])
             ->add('name', TextType::class,
@@ -181,7 +182,7 @@ class PreventiviController extends AbstractController {
                 'required' => true,
                 'invalid_message' => 'Errore: cambo obbligatorio',
                 'choices' => [
-                    '' => null,
+                    '' => '',
                     'Sì' => true,
                     'No' => false
                 ],
@@ -261,7 +262,7 @@ class PreventiviController extends AbstractController {
                 'required' => true,
                 'invalid_message' => 'Errore: cambo obbligatorio',
                 'choices' => [
-                    '' => null,
+                    '' => '',
                     'Sì' => true,
                     'No' => false
                 ],
@@ -271,7 +272,7 @@ class PreventiviController extends AbstractController {
                 'required' => true,
                 'invalid_message' => 'Errore: cambo obbligatorio',
                 'choices' => [
-                    '' => null,
+                    '' => '',
                     'Sì' => true,
                     'No' => false
                 ],
@@ -413,21 +414,24 @@ class PreventiviController extends AbstractController {
                 $name = $form_quote->get('name')->getData();
                 $surname = $form_quote->get('surname')->getData();
                 $phone = $form_quote->get('telephone')->getData();
-                $email = $form_quote->get('name')->getData();
+                $email = $form_quote->get('email')->getData();
 
                 $start_address = $form_quote->get('start_address')->getData();
                 $start_city = $form_quote->get('start_city')->getData();
                 $start_cap = $form_quote->get('start_cap')->getData();
                 $start_floor = $form_quote->get('start_floor')->getData();
                 $start_lift = $form_quote->get('start_lift')->getData();
+                $start_lift === true ? $start_lift = "Sì" : $start_lift = "No";
 
                 $end_address = $form_quote->get('end_address')->getData();
                 $end_city = $form_quote->get('end_city')->getData();
                 $end_cap = $form_quote->get('end_cap')->getData();
                 $end_floor = $form_quote->get('end_floor')->getData();
                 $end_lift = $form_quote->get('end_lift')->getData();
+                $end_lift === true ? $end_lift = "Sì" : $end_lift = "No";
 
                 $deposit = $form_quote->get('deposit')->getData();
+                $deposit === true ? $deposit = "Sì" : $deposit = "No";
 
                 /* 
                 * Create array and save inside the following rooms if
@@ -543,6 +547,7 @@ class PreventiviController extends AbstractController {
                 * Set email message
                 */
                 $email_message = "Preventivo online Traslochi Brandimarte \n";
+                $email_message .= "\n";
                 $email_message .= "Preventivo richiesto da: \n";
                 $email_message .= "Nome: $name \n";
                 $email_message .= "Cognome: $surname \n";
@@ -588,6 +593,25 @@ class PreventiviController extends AbstractController {
 
                 mail("info@marcovaleri.net", "Preventivo online Traslochi Brandimarte", $email_message);
 
+                /*
+                * Set email message for the use and send it
+                * by the email address provided by the form
+                */
+                $user_email_message = "Gentile $name, \n";
+                $user_email_message .= "Grazie per la tua fiducia che ci hai dimostrato. \n";
+                $user_email_message .= "So quando sia difficile organizzare e trovare la giusta ditta per un trasloco, \n";
+                $user_email_message .= "parola di chi lavora in questo settore da più di 20 anni. \n";
+                $user_email_message .= "Ho ricevuto personalmente la tua richiesta di preventivo, cercherò di eleborarla al meglio che posso ";
+                $user_email_message .= "per adattarla alle tue esigenze e darti il miglior rapporto qualità prezzo per il tuo prossimo trasloco. \n";
+                $user_email_message .= "Come d'accordo, riceverai il tuo preventivo gratuito e senza impegno entro e non oltre le 24 ore.";
+                $user_email_message .= "\n";
+                $user_email_message .= "Grazie per la fiducia che hai riposto fino ad ora in nei nostri servizi";
+                $user_email_message .= "\n";
+                $user_email_message .= "Andrea Brandimarte";
+
+                $user_email_message = wordwrap($user_email_message, 70);
+
+                mail($email, "Traslochi Brandimarte richiesta preventivo online gratuito", $user_email_message);
 
             }
             
@@ -596,6 +620,13 @@ class PreventiviController extends AbstractController {
             'form_quote' => $form_quote->createView()
         ]);
 
+    }
+
+    /**
+     * @Route("/preventivo-online-conferma", name="app_preventivo_online_conferma")
+     */
+    public function preventivo_online_conferma() {
+        return $this->render('pages/preventivo-online-conferma.html.twig');
     }
 
 }

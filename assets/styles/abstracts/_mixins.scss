@@ -105,3 +105,27 @@
     }
 
 }
+
+/*
+* Create a mixim that 
+* style input select option
+*/
+@mixin inp_select {
+    
+    div {
+
+        select {
+            padding: .5rem;
+            font-size: 1rem;
+            border: 1px solid $green_font;
+            border-radius: 5px;
+
+            &:hover {
+                box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            }
+
+        }
+
+    }
+
+}

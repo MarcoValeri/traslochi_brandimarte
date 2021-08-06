@@ -1,5 +1,12 @@
 .preventivo-main {
     color: $blue_font;
+
+    /* 
+    * Include @mixin brad to highlight the brand where 
+    * there is the class .brand-font
+    */
+    @include brand;
+
     
     .preventivo-main-title {
         width: 80%;
@@ -66,7 +73,16 @@
         background-position: top;
         position: relative;
 
-        // Genera rules for labels, inputs and h4 title
+        // Set rules for ul that appears when form print out some errors
+        ul {
+            li {
+                list-style: none;
+                color: #ff0000;
+                margin: .5rem;
+            }
+        }
+
+        // Genera rules for labels, inputs, h4 title
 
         label {
             margin: .5rem .5rem .5rem .5rem;
@@ -244,6 +260,7 @@
 
         .preventivo-main-form-start-lift {
             grid-area: preventivo-main-form-start-lift;
+            @include inp_select;
         }
 
         .preventivo-main-form-end-title {
@@ -268,10 +285,12 @@
 
         .preventivo-main-form-end-lift {
             grid-area: preventivo-main-form-end-lift;
+            @include inp_select;
         }
 
         .preventivo-main-form-deposit {
             grid-area: preventivo-main-form-deposit;
+            @include inp_select;
         }
 
         .preventivo-main-form-rooms-title {

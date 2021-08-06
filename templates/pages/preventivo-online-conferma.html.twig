@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{# Set up title of the preventivi page #}
+{% block title %}
+Preventivo Online Conferma
+{% endblock %}
+
+{# Set up the header sub title #}
+{% block header_sub_title %}
+<h2>Grazie per la richiesta di preventivo</h2>
+{% endblock %}
+
+{% block body %}
+<main class="preventivo-conferma-main">
+    <section class="preventivo-conferma-main-container">
+        <h4>Grazie per la richiesta di preventivo</h4>
+        <p>
+            Abbiamo ricevuto la tua richiesta, riceverai il tuo preventivo via email entro 
+            e non oltre le 24 ore.
+            <br>
+            Grazie per esserti rivolto a <span class="brand-font">Traslochi Brandimarte</span>
+        </p>
+    </section>
+</main>
+{% endblock %}
