@@ -32,7 +32,6 @@ class ContattiController extends AbstractController {
         * the request of the user
         */
         $form_contact = $this->createFormBuilder([])
-            ->setAction($this->generateUrl('app_contatti_conferma'))
             ->add('name', TextType::class, 
                 [
                     'label' => 'Nome *',
@@ -131,9 +130,11 @@ class ContattiController extends AbstractController {
             $email_message .= "\n";
             $email_message .= $message;
 
-            $email_message = wordwrap($email_message, 70);
+            $email_message = wordwrap($email_message, 100);
 
             mail("info@marcovaleri.net", "Contatti Traslochi Brandimarte", $email_message);
+
+            return $this->redirectToRoute('app_contatti_conferma');
 
         }
 

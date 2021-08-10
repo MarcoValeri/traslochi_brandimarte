@@ -41,7 +41,6 @@ class PreventiviController extends AbstractController {
         * email with the data of the user
         */
         $form_quote = $this->createFormBuilder([])
-            ->setAction($this->generateUrl('app_preventivo_online_conferma'))
             ->add('privacy_authorization', CheckboxType::class, [
                 'label' => 'Autorizzo Traslochi Brandimarte Srl al trattamento dei miei dati personali per attività promozionali, pubblicitarie e di marketing dei propri prodotti e servizi',
                 'required' => true
@@ -589,7 +588,7 @@ class PreventiviController extends AbstractController {
                 * Format email message and
                 * send the email
                 */
-                $email_message = wordwrap($email_message, 70);
+                $email_message = wordwrap($email_message, 100);
 
                 mail("info@marcovaleri.net", "Preventivo online Traslochi Brandimarte", $email_message);
 
@@ -598,20 +597,26 @@ class PreventiviController extends AbstractController {
                 * by the email address provided by the form
                 */
                 $user_email_message = "Gentile $name, \n";
+                $user_email_message .= "\n";
                 $user_email_message .= "Grazie per la tua fiducia che ci hai dimostrato. \n";
+                $user_email_message .= "\n";
                 $user_email_message .= "So quando sia difficile organizzare e trovare la giusta ditta per un trasloco, \n";
                 $user_email_message .= "parola di chi lavora in questo settore da più di 20 anni. \n";
+                $user_email_message .= "\n";
                 $user_email_message .= "Ho ricevuto personalmente la tua richiesta di preventivo, cercherò di eleborarla al meglio che posso ";
                 $user_email_message .= "per adattarla alle tue esigenze e darti il miglior rapporto qualità prezzo per il tuo prossimo trasloco. \n";
-                $user_email_message .= "Come d'accordo, riceverai il tuo preventivo gratuito e senza impegno entro e non oltre le 24 ore.";
                 $user_email_message .= "\n";
-                $user_email_message .= "Grazie per la fiducia che hai riposto fino ad ora in nei nostri servizi";
+                $user_email_message .= "Come d'accordo, riceverai il tuo preventivo gratuito e senza impegno entro e non oltre le 24 ore.\n";
+                $user_email_message .= "\n";
+                $user_email_message .= "Grazie per la fiducia che hai dimostrato fino ad ora nei nostri servizi\n";
                 $user_email_message .= "\n";
                 $user_email_message .= "Andrea Brandimarte";
 
-                $user_email_message = wordwrap($user_email_message, 70);
+                $user_email_message = wordwrap($user_email_message, 100);
 
                 mail($email, "Traslochi Brandimarte richiesta preventivo online gratuito", $user_email_message);
+
+                return $this->redirectToRoute('app_preventivo_online_conferma');
 
             }
             
